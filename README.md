@@ -8,5 +8,5 @@ A collection of real-world benchmarks for silent, low-power machines.
 
 ## 📁 Benchmark Folder
 
-- [Wyse 5060 Thin Client](Benchmark/Wyse-5060.md)
-- [Lenovo M715q](Benchmark/Lenovo-M715q.md) *(coming soon)*
+- [Wyse 5060 Thin Client](benchmarks/Wyse5060.md)
+- [Lenovo M715q](benchmarks/Lenovo-M715q.md) *(coming soon)*
