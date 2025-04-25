@@ -1,0 +1,49 @@
+# 🧪 Low-Power Real-World PC Test Log
+**System:** Wyse 5060 Thin Client  
+**📅 Tested:** April 2025  
+**🔇 Fanless | 16GB DDR3 | SSD | No Mods**  
+**🌐 Purpose:** Quiet desktop for browsing, media, light 3D  
+
+## 🖥️ Specs
+- **CPU:** AMD GX-424CC (4C/4T, 2.4GHz)  
+- **iGPU:** Radeon R5E (GCN 1st gen)  
+- **TDP:** 25W  
+- **Cooling:** Passive (No fan)
+
+## 🔌 Power Usage (Measured at Wall)
+| State          | Power Draw |
+|----------------|------------|
+| Idle (Windows) | 11W        |
+| Web/YouTube    | 16–23W     |
+| Full Load      | 26W        |
+
+## 🧪 Real-World Benchmarks
+| Test Name        | Result                        |
+|------------------|-------------------------------|
+| SilverBench      | 4755                          |
+| Wirple           | 1076                          |
+| WebGL Pasta      | 35 FPS (range: 32–63)         |
+| WebGL Aquarium   | 11 FPS @ 30,000 fish          |
+| PassMark         | CPU: 851 / 1827 • Mem: 812    |
+| Geekbench 6      | Single: 270 • Multi: 684      |
+| MX83             | 23 FPS @ 30 balls             |
+| Minecraft        | 720p, 22 FPS                  |
+
+## 🔥 Thermals
+Runs hot under full load — passive cooling saturates quickly.
+
+## 🧠 Verdict
+Capable for lightweight tasks, web apps, and some WebGL. Godot and 2D engines are okay. Minecraft runs but barely playable. Not suited for GPU-heavy workloads or long full-load sessions.
+
+## 📷 Notes Style, Preserved
+> “Idle 11W, load 26W. Minecraft playable at 720p but low FPS. WebGL surprisingly okay. Heat buildup is real. Silent and very usable as a web box.”
+
+## ✅ Summary Scorecard
+| Category         | Score     |
+|------------------|-----------|
+| Web Browsing     | ⭐⭐⭐⭐      |
+| YouTube/Media    | ⭐⭐⭐       |
+| Light Gaming     | ⭐⭐        |
+| Minecraft        | ⭐         |
+| Power Efficiency | ⭐⭐⭐⭐      |
+| Noise Level      | ⭐⭐⭐⭐⭐     |
