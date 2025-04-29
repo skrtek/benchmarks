@@ -4,5 +4,5 @@ This folder contains individual test logs for low-power systems. These are real 
 
 ## 📁 Benchmark Folder
 
-- [Wyse 5060 Thin Client](benchmarks/wyse5060.md)
+- [Wyse 5060 Thin Client](wyse5060)
 - [Lenovo M715q](LenovoM715q)
