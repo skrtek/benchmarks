@@ -1,0 +1,63 @@
+🖥️ HP ProDesk 600 G4 – i5-8600T (CachyOS) Benchmark Log
+
+Tested: April 2025  
+OS: CachyOS (Linux, performance-tuned)  
+Form Factor: SFF Business Desktop
+
+---
+
+🔧 System Specs
+
+| Component | Detail |
+|----------|--------|
+| CPU      | Intel Core i5-8600T (6C/6T, up to 3.7GHz) |
+| RAM      | 22GB DDR4 |
+| Storage  | 128GB NVMe SSD |
+| OS       | CachyOS (Arch-based) |
+| Cooling  | Stock Low-Profile Cooler |
+
+---
+
+🔌 Power Consumption (Identical to Windows)
+
+| State   | Power Draw |
+|---------|------------|
+| Idle    | 12W        |
+| Work    | 17–38W     |
+| Full Load | 58W      |
+
+---
+
+🧪 Benchmarks
+
+| Benchmark            | Linux Result | Windows Result | Δ Difference |
+|----------------------|--------------|----------------|--------------|
+| Silverbench          | 23,854       | 20,240         | ▲ +17.8%     |
+| Wirple (WebGL)       | 4,924        | 4,852          | ▲ +1.5%      |
+| WebGL Pasta          | 65 FPS       | 50 FPS         | ▲ +30.0%     |
+| Aquarium             | 33 FPS       | 20 FPS         | ▲ +65.0%     |
+| Passmark CPU Single  | 2,309    | 2,054          | ▲ +12.4%     |
+| Passmark CPU Multi   | 8,770    | 8,615          | ▲ +1.8%      |
+| Passmark Memory      | 3,166    | 3,174          | ▼ -0.3%      |
+| MX83 (30 Balls)      | 38 FPS       | 16 FPS         | ▲ +137.5%    |
+| Geekbench 6 Single   | 1,380      | 1,333          | ▲ +3.5%      |
+| Geekbench 6 Multi   | 4,883      | 4,461          | ▲ +9.5%      |
+
+---
+
+🧠 Verdict
+
+Running **CachyOS** on the ProDesk 600 G4 boosts nearly all benchmark results — especially **WebGL graphics** and **MX83 physics** performance, which see **massive gains** likely due to better driver and GPU handling on Linux. CPU performance also improves modestly across the board.
+
+---
+
+📋 Summary
+
+| Category              | Score (⭐ out of 5) |
+|-----------------------|-------------------|
+| Web Browsing          | ⭐⭐⭐⭐⭐ |
+| Video Playback        | ⭐⭐⭐⭐⭐ |
+| Light 3D Gaming       | ⭐⭐⭐½ |
+| Power Efficiency      | ⭐⭐⭐⭐ |
+| MX86 / Physics Tests  | ⭐⭐⭐⭐ |
+| System Responsiveness | ⭐⭐⭐⭐⭐ |
