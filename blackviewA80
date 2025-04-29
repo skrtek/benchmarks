@@ -1,14 +1,14 @@
-# 📱 Blackview A80 Plus – Real-World Bench
+📱 Blackview A80 Plus – Real-World Bench
 
-**Tested:** April 2025  
-**Platform:** Android 12  
-**Chipset:** MediaTek MT6742V/CB  
-**RAM:** 4GB  
-**Device Type:** Budget Android Smartphone  
+Tested:** April 2025  
+Platform: Android 12  
+Chipset: MediaTek MT6742V/CB  
+RAM: 4GB  
+Device Type: Budget Android Smartphone  
 
 ---
 
-## 🔧 Specs
+🔧 Specs
 
 | Component | Detail |
 |----------|--------|
@@ -19,23 +19,23 @@
 
 ---
 
-## 🧪 Benchmark Results
+🧪 Benchmark Results
 
 | Benchmark | Score |
 |-----------|-------|
-| **Silverbench** | 1418 |
-| **Wirple (WebGL)** | 424 |
-| **MX83 Physics** | 13 FPS @ 10 Balls |
-| **Passmark Total** | 3480 |
+| Silverbench | 1418 |
+| Wirple (WebGL) | 424 |
+| MX83 Physics | 13 FPS @ 10 Balls |
+| Passmark Total | 3480 |
 | └ CPU (Single/Multi) | 525 / 1739 |
 | └ Memory | 5556 |
 | └ Disk | 17649 |
 | └ 3D | 4031 |
-| **Geekbench 6** | Single: 174 / Multi: 717 |
+| Geekbench 6 | Single: 174 / Multi: 717 |
 
 ---
 
-## 📊 Verdict
+📊 Verdict
 
 ✅ Good for casual apps, messaging, and light browsing.  
 ❌ Not suitable for 3D gaming or multitasking under load.  
@@ -43,13 +43,13 @@
 
 ---
 
-## 📷 Notes (From Log)
+📷 Notes (From Log)
 
 > “MX83 tanked below 15FPS. Passmark Mem/Disk shockingly good. This is a ‘basic use only’ phone.”
 
 ---
 
-## 🧭 Summary
+🧭 Summary
 
 | Category        | Score (⭐ out of 5) |
 |----------------|-------------------|
