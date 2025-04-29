@@ -1,12 +1,12 @@
-# 🖥️ HP ProDesk 600 G4 – Intel i5-8600T Benchmark Log
+🖥️ HP ProDesk 600 G4 – Intel i5-8600T Benchmark Log
 
-**Tested:** April 2025  
-**OS:** Windows 10 LTSC (High Performance Plan)  
-**Form Factor:** SFF Business Desktop
+Tested: April 2025  
+OS: Windows 10 LTSC (High Performance Plan)  
+Form Factor: SFF Business Desktop
 
 ---
 
-## 🔧 System Specs
+🔧 System Specs
 
 | Component | Detail |
 |----------|--------|
@@ -18,7 +18,7 @@
 
 ---
 
-## 🔌 Power Consumption (Wall Meter)
+🔌 Power Consumption (Wall Meter)
 
 | State   | Power Draw |
 |---------|------------|
@@ -28,26 +28,26 @@
 
 ---
 
-## 🧪 Benchmarks
+🧪 Benchmarks
 
 | Benchmark            | Result |
 |----------------------|--------|
-| **Silverbench**      | 20,240 |
-| **Wirple (WebGL)**   | 4,852 |
-| **WebGL Pasta**      | 50 FPS |
-| **Aquarium**         | 20 FPS @ 30K |
-| **Passmark (Total)** | 2,054 |
+| Silverbench          | 20,240 |
+| Wirple (WebGL)       | 4,852 |
+| WebGL Pasta          | 50 FPS |
+| Aquarium             | 20 FPS @ 30K |
+| Passmark (Total)     | 2,054 |
 | • CPU                | 8,615 |
 | • 3D Graphics        | 1,311 |
 | • Memory             | 3,174 |
 | • Disk               | 8,533 |
-| **CPU-Z**            | Single: 405 / Multi: 2330 |
-| **Geekbench 6**      | Single: 1333 / Multi: 4461 |
-| **MX86 Physics**     | 30 Balls: 16 FPS |
+| CPU-Z                | Single: 405 / Multi: 2330 |
+| Geekbench 6          | Single: 1333 / Multi: 4461 |
+| MX86 Physics         | 30 Balls: 16 FPS |
 
 ---
 
-## 🧠 Verdict
+🧠 Verdict
 
 Excellent balance of performance and power.  
 This system excels in multitasking, productivity, and general use with plenty of headroom thanks to its 6 cores.  
@@ -55,13 +55,13 @@ MX86 performance is GPU-bound — not ideal for physics-heavy real-time tasks, b
 
 ---
 
-## 📝 Tester Notes
+📝 Tester Notes
 
 > “Fantastic mid-tier performer. Power use is efficient, and single/multi-core numbers are far beyond older-gen SFF chips. Weak iGPU shows up in WebGL tasks, but CPU more than makes up for it.”
 
 ---
 
-## 📋 Summary
+📋 Summary
 
 | Category              | Score (⭐ out of 5) |
 |-----------------------|-------------------|
