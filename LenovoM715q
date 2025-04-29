@@ -1,12 +1,12 @@
-# 🖥️ Lenovo M715q – AMD A10-9700E Benchmark Log
+🖥️ Lenovo M715q – AMD A10-9700E Benchmark Log
 
-**Tested:** April 2025  
-**OS:** CachyOS (Linux)  
-**Form Factor:** SFF Desktop (Thin Client Style)  
+Tested:April 2025  
+OS:CachyOS (Linux)  
+Form Factor: SFF Desktop (Thin Client Style)  
 
 ---
 
-## 🔧 System Specs
+🔧 System Specs
 
 | Component | Detail |
 |----------|--------|
@@ -18,7 +18,7 @@
 
 ---
 
-## 🔌 Power Consumption (Wall Meter)
+ 🔌 Power Consumption (Wall Meter)
 
 | State         | Power Draw |
 |---------------|------------|
@@ -28,23 +28,23 @@
 
 ---
 
-## 🧪 Benchmarks
+🧪 Benchmarks
 
 | Benchmark         | Result |
 |------------------|--------|
-| **Silverbench**   | 8998 |
-| **Wirple (WebGL)**| 2303 |
-| **WebGL Pasta**   | 56 FPS |
-| **Aquarium**      | 22 FPS @ 30K |
-| **Passmark**      | Single: 1507 / Multi: 3307 / Memory: 1280 |
-| **CPU-X**         | 4,104,122 |
-| **MX86 Physics**  | 74 FPS @ 30 Balls / 36 FPS @ 60 Balls |
-| **Minecraft (No Shaders)** | 60 FPS @ 1080p |
-| **Minecraft (With Shaders)** | 16–19 FPS @ 1080p |
+| Silverbench      | 8998 |
+| Wirple (WebGL)   | 2303 |
+| WebGL Pasta      | 56 FPS |
+| Aquarium         | 22 FPS @ 30K |
+| Passmark         | Single: 1507 / Multi: 3307 / Memory: 1280 |
+| CPU-X            | 4,104,122 |
+| MX86 Physics     | 74 FPS @ 30 Balls / 36 FPS @ 60 Balls |
+| Minecraft (No Shaders) | 60 FPS @ 1080p |
+| Minecraft (With Shaders) | 16–19 FPS @ 1080p |
 
 ---
 
-## 🧠 Verdict
+🧠 Verdict
 
 👍 Excellent general-use Linux machine with strong performance for a 35W-class APU.  
 🎮 Minecraft playable without shaders, decent in-game physics in MX86.  
@@ -53,13 +53,12 @@
 
 ---
 
-## 📝 Tester Notes
+📝 Tester Notes
 
 > “Workload range wider than expected — YouTube stays efficient. MX86 handles 30–60 balls well. Minecraft is great stock, but shaders crush it. Feels snappier than specs suggest.”
 
 ---
-
-## 📋 Summary
+📋 Summary
 
 | Category         | Score (⭐ out of 5) |
 |------------------|-------------------|
