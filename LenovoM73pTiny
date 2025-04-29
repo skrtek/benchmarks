@@ -1,0 +1,68 @@
+# 🖥️ Lenovo M73p Tiny – Intel i5-4590T Benchmark Log
+
+**Tested:** April 2025  
+**OS:** CachyOS (Linux)  
+**Form Factor:** Tiny Desktop (SFF)
+
+---
+
+## 🔧 System Specs
+
+| Component | Detail |
+|----------|--------|
+| CPU | Intel Core i5-4590T (4C/4T, 3.0GHz) |
+| RAM | 16GB DDR3 |
+| Storage | 128GB SSD |
+| OS | CachyOS |
+| Cooling | Stock Low Profile Cooler |
+
+---
+
+## 🔌 Power Consumption (Wall Meter)
+
+| State   | Power Draw |
+|---------|------------|
+| Idle    | 12W        |
+| Work    | 18–38W     |
+| Full Load | 43W      |
+
+---
+
+## 🧪 Benchmarks
+
+| Benchmark            | Result |
+|----------------------|--------|
+| **Silverbench**      | 14,278 |
+| **Wirple (WebGL)**   | 4,054 |
+| **WebGL Pasta**      | 32 FPS |
+| **Aquarium**         | 30 FPS @ 30K |
+| **Passmark**         | Single: 1835 / Multi: 4457 / Memory: 1807 |
+| **CPU-X**            | 3,271,114 |
+| **MX86 Physics**     | 40 FPS @ 30 Balls / 21 FPS @ 60 Balls |
+
+---
+
+## 🧠 Verdict
+
+Very solid low-power performer, especially for web-based GPU tasks and general multitasking.  
+MX86 performance respectable, although GPU limits show at higher loads.  
+A great Linux box for browsing, light development, and 2D/3D hybrid workloads.  
+
+---
+
+## 📝 Tester Notes
+
+> “This chip still holds up. Consistent performance, low idle draw, great for containerized dev or emulator work. GPU aging but passable.”
+
+---
+
+## 📋 Summary
+
+| Category              | Score (⭐ out of 5) |
+|-----------------------|-------------------|
+| Web Browsing          | ⭐⭐⭐⭐½ |
+| Video Playback        | ⭐⭐⭐⭐ |
+| Light 3D Gaming       | ⭐⭐⭐ |
+| Power Efficiency      | ⭐⭐⭐⭐ |
+| MX86 / Physics Tests  | ⭐⭐⭐ |
+| Noise Levels          | ⭐⭐½ |
