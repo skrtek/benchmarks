@@ -1,7 +1,7 @@
 🖥️ ASRock DeskMini X300 – AMD Ryzen 5 2400GE Benchmark Log
 
 Tested: April 2025
-OS: CachyOS (Linux) & Windows 11
+OS: CachyOS (Linux) & Windows 11 LTSC
 Form Factor: Mini PC (Small Form Factor)
 
 ---
@@ -13,7 +13,7 @@ Form Factor: Mini PC (Small Form Factor)
 | CPU       | AMD Ryzen 5 2400GE (4C/8T, 3.2 GHz Base) |
 | RAM       | 16GB DDR4 3200MHz                        |
 | Storage   | 128GB SSD                                |
-| OS        | CachyOS (Linux) & Windows 11             |
+| OS        | CachyOS (Linux) & Windows 11 Brave       |
 | Display   | 1080p Acer Monitor @ 100Hz               |
 | Cooling   | Stock Cooler                             |
 
