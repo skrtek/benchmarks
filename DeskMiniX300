@@ -1,0 +1,97 @@
+🖥️ ASRock DeskMini X300 – AMD Ryzen 5 2400GE Benchmark Log
+
+Tested: April 2025
+OS: CachyOS (Linux) & Windows 11
+Form Factor: Mini PC (Small Form Factor)
+
+---
+
+🔧 System Specs
+
+| Component | Detail                                   |
+| --------- | ---------------------------------------- |
+| CPU       | AMD Ryzen 5 2400GE (4C/8T, 3.2 GHz Base) |
+| RAM       | 16GB DDR4 3200MHz                        |
+| Storage   | 128GB SSD                                |
+| OS        | CachyOS (Linux) & Windows 11             |
+| Display   | 1080p Acer Monitor @ 100Hz               |
+| Cooling   | Stock Cooler                             |
+
+---
+
+🔌 Power Consumption (Wall Meter)
+
+| State     | Linux (CachyOS) | Windows 11            |
+| --------- | --------------- | --------------------- |
+| Idle      | 14W             | 12–15W                |
+| Workload  | 35W             | 24–38W                |
+| Full Load | 40W             | 44.8W (35W CPU Limit) |
+
+---
+
+🧪 Benchmarks
+
+| Benchmark          | Linux (CachyOS)                                            | Windows 11                                                                   |
+| ------------------ | ---------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Silverbench        | 18384                                                      | 19289                                                                        |
+| Wirple (WebGL)     | 5062                                                       | 4675                                                                         |
+| WebGL Aquarium     | 28 FPS @ 30K                                               | 35 FPS @ 30K                                                                 |
+| MX83 Physics       | 30 Balls: 100 FPS<br>60 Balls: 89 FPS<br>120 Balls: 38 FPS | 40 Balls: 25 FPS (Score: 1040)                                               |
+| Passmark           | Single: 2017 / Multi: 7668 / Mem: 2448                     | Total: 2223 / Single: 2270 / Multi: 8291 / Mem: 2549 / 3D: 2566 / Disk: 3140 |
+| Geekbench 6        | Single: 1231 / Multi: 3454                                 | Single: 1183 / Multi: 3307 / OpenCL: 15317                                   |
+| 5 Second Benchmark | Single: 5734 / Multi: 39311                                | Single: 5777 / Multi: 40049                                                  |
+| CPU-Z              | —                                                          | Single: 412 / Multi: 1861                                                    |
+| WebXPRT4           | ❌ Did Not Run                                             | 184                                                                          |
+| EV.IO              | 100 FPS                                                    | 95–103 FPS                                                                   |
+
+---
+
+🎮 Gaming Tests
+
+| Game                        | Linux (CachyOS)                           | Windows 11                                                           |
+| --------------------------- | ----------------------------------------- | -------------------------------------------------------------------- |
+| Minecraft (No Shaders)      | 80 FPS                                    | 85–100 FPS @ 1080p                                                   |
+| Minecraft (BSL Shaders Low) | 15–30 FPS                                 | 28–33 FPS                                                            |
+| Muck                        | 36 FPS (Default)                          | —                                                                    |
+| Teardown                    | 17 FPS (75% res, OpenGL)    37 FPS @ 720p | —                                                                    |
+| Vampire Hunters             | —                                         | 45 FPS @ 1080p High                                                  |
+| Valheim                     | —                                         | 25 FPS @ 720p Balanced                                               |
+| Serious Sam HD              | —                                         | 115 FPS @ 1080p Medium                                               |
+| The Forest                  | —                                         | 24 FPS @ 1080p Medium    33 FPS @ 720p High                          |
+| House Flipper               | —                                         | 44 FPS Inside / 30 FPS Outside (1080p Medium)                        |
+| Far Cry 3                   | —                                         | 67 FPS @ 720p Medium    40 FPS @ 1080p Medium    30 FPS @ 1080p High |
+| Doom Eternal                | —                                         | 20 FPS @ 1080p Low    31 FPS @ 720p Low                              |
+| 7 Days to Die               | —                                         | 30 FPS @ 720p Low                                                    |
+
+---
+
+🧠 Verdict
+
+👍 A surprisingly capable low-power APU system, particularly under Linux.
+💻 Browser and productivity benchmarks are strong — WebGL runs smoothly.
+🎮 Minecraft and lighter 3D games are playable, but heavier titles show limits.
+🔥 Thermal and power behavior remain efficient, even under full load.
+❌ GPU bottlenecks evident in shader-heavy or AAA scenarios.
+
+---
+
+📝 Tester Notes
+
+> “Linux performance is smoother and lighter; Minecraft feels native. MX83 shows strong iGPU physics response. Windows handles games better overall but draws more power. CPU performs beyond expectation for a 35W-class chip.”
+
+---
+
+📋 Summary
+
+| Category                 | Score (⭐ out of 5) |
+| ------------------------ | ------------------ |
+| Web Browsing             | ⭐⭐⭐⭐½              |
+| Video Playback           | ⭐⭐⭐⭐               |
+| Light 3D Gaming          | ⭐⭐⭐½               |
+| Minecraft (No Shaders)   | ⭐⭐⭐⭐               |
+| Minecraft (With Shaders) | ⭐⭐½                |
+| Power Efficiency         | ⭐⭐⭐½               |
+| Noise Levels             | ⭐⭐                 |
+
+---
+
