@@ -1,0 +1,87 @@
+
+
+🖥️ \[DEVICE NAME] – \[CPU MODEL] Benchmark Log
+
+Tested:\[Month Year]
+OS: \[Primary OS Tested (e.g., CachyOS, Windows 11)]
+Form Factor: \[Mini PC / Thin Client / Desktop / Laptop / etc.]
+
+---
+
+🔧 System Specs
+
+| Component | Detail                                    |
+| --------- | ----------------------------------------- |
+| CPU       | \[CPU Model + Cores/Threads + Clock]      |
+| RAM       | \[Size and Speed, e.g. 16GB DDR4 3200MHz] |
+| Storage   | \[SSD/HDD, Size, Type]                    |
+| OS        | \[OS Version]                             |
+| Display   | \[Resolution, Refresh Rate, Model]        |
+| Cooling   | \[Cooling type or fan config]             |
+
+---
+
+🔌 Power Consumption (Wall Meter)
+
+| State     | Linux (if tested) | Windows (if tested) |
+| --------- | ----------------- | ------------------- |
+| Idle      | \[W]              | \[W]                |
+| Workload  | \[W]              | \[W]                |
+| Full Load | \[W]              | \[W]                |
+
+---
+
+🧪 Benchmarks
+
+| Benchmark          | Linux (if tested) | Windows (if tested) |
+| ------------------ | ----------------- | ------------------- |
+| Silverbench        |                   |                     |
+| Wirple (WebGL)     |                   |                     |
+| WebGL Aquarium     |                   |                     |
+| MX83 Physics       |                   |                     |
+| Passmark           |                   |                     |
+| Geekbench 6        |                   |                     |
+| 5 Second Benchmark |                   |                     |
+| CPU-Z              |                   |                     |
+| WebXPRT4           |                   |                     |
+| EV.IO              |                   |                     |
+
+---
+
+🎮 Gaming Tests
+
+| Game                   | Linux (if tested) | Windows (if tested) |
+| ---------------------- | ----------------- | ------------------- |
+| Minecraft (No Shaders) |                   |                     |
+| Minecraft (Shaders)    |                   |                     |
+| \[Game Name]           |                   |                     |
+| \[Game Name]           |                   |                     |
+| \[Game Name]           |                   |                     |
+
+---
+
+🧠 Verdict
+
+> Write a short paragraph about performance, thermal behavior, use case strengths/weaknesses, or standout observations.
+
+---
+
+📝 Tester Notes
+
+> Add your impressions, quirks observed, temperature details, driver notes, or anything specific from testing here.
+
+---
+
+📋 Summary
+
+| Category                 | Score (⭐ out of 5) |
+| ------------------------ | ------------------ |
+| Web Browsing             | ⭐⭐⭐⭐               |
+| Video Playback           | ⭐⭐⭐⭐               |
+| Light 3D Gaming          | ⭐⭐⭐                |
+| Minecraft (No Shaders)   | ⭐⭐⭐⭐               |
+| Minecraft (With Shaders) | ⭐⭐                 |
+| Power Efficiency         | ⭐⭐⭐                |
+| Noise Levels             | ⭐⭐½                |
+
+
