@@ -1,0 +1,106 @@
+🖥️ GLOTREND ADL-N  \ N100 Benchmark Log
+
+Tested:\May 2025
+OS: \CachyOS, Windows 11 Brave Browser
+Form Factor: Mini PC Barebone (added Ram,Patriot 120GB SSD and Intel WIFI/BT) SATA SSD Windows 10 only)
+
+---
+
+🔧 System Specs
+
+| Component | Detail                                    |
+| --------- | ----------------------------------------- |
+| CPU       | \[Intel n100 + 4Core/4Thread 3.4Ghz   6W  |
+| RAM       | \[16GB DDR4 3200MHz]                      |
+| Storage   | \[NVME 128GB Patriot                      |
+| OS        | \[Windows 11 LTSC Cachyos                 |
+| Display   | \[1080P Acer 27Inch 100Mhz Refresh        |
+| Cooling   | \[Device has CPU fan surprinsgly          |
+
+---
+
+🔌 Power Consumption (Wall Meter)
+
+| State     | Linux (if tested) | Windows (if tested) |
+| --------- | ----------------- | ------------------- |
+| Idle      | \[W]              | \8.5W               |
+| Workload  | \[W]              | \12.3W              |
+| Full Load | \[W]              | \27W                |
+
+---
+
+🧪 Benchmarks
+
+| Benchmark          | Linux (if tested) | Windows 11 LTSC		 |.  WIN 10 Ltsc
+| ------------------ | ----------------- | ------------------- 		        |
+| Silverbench        |    15983          |  13175              		        | 15142
+| Wirple (WebGL)     |      4736         |  4133              		        | 5363
+| WebGL Aquarium     |  30K fish @ 37FPS |  30K fish @ 20FPS  		        | 30K fish @ 32FPS
+| MX83 Physics       |   30 balls @ 42FPS|   30 Balls @ 11FPS  		        |  11FPS
+| Passmark           |  S/ 2078 M/ 5983  | T/1410 Cpu-S/2024 m/6073       |T/1338 S/2083 m/ 6132
+| Geekbench 6        |  S/1280. M/3298   | S/1183 M/3022 Compute/3285.    | s/1280 m/ 3134  OCL 3284
+| 5 Second Benchmark |  S/ 5053 M/17965  |  S/ 5,098 M/ 17822 		        | s/5190 m/17989
+| CPU-Z              |                   |   S/370  M/ 1271   		        | S/380 m/1309
+| WebXPRT4           |       178         |       161          		        |.  186
+| EV.IO              |      60-90        |     58 FPS         		        | 35-80fps
+  Diskmark				       R/866MB W/816MB | R/558 w/485
+  Uniengie Heaven.     1080P Low - 26Fps
+SKRBENCH                                                                 CPU-2074 GPU - 351 Total - 1213
+---
+
+🎮 Gaming Tests
+
+| Game                   | Linux (if tested) | Windows 11 LTSC |.              Windows 10 LTSC
+| ---------------------- | ----------------- | ------------------- |
+| Minecraft (No Shaders) |  1080P 98FPS      |  1080p 144FPS              |. 
+| Minecraft (Shaders)    | 720P Potato 20fps |  720P Potato Shaders 35FPS |
+| Vampire Hunters        | 720p low.         |  720P Low 20FPS            |
+| \FarCry 3.             |     not run              |  720P medium 35FPS  |.  900p low 44fps
+| \House Flipper 1           30FPS                720P Medium 26-33FPS 	  |
+  Muck		           33FPS		1080P Low 30FPS.               1080p 31FPS spiked up to 47
+  THe Forest          		14FPS	       720P Low 20fps
+  Torchlight 2					1080P High 60FPs
+  Borderlands 2			1080P 40FPS. 		720P. LOW 20FPS
+half life 2 lost coast      41FPS
+video stress test 
+1080P MAX		
+
+
+
+
+
+
+---
+
+🧠 Verdict
+
+Solid and surprisngly fast and power effienct small PC. Can play older titles at 1080P Emulation is decent at 1080P. You could just leave this machine on at all times
+and use it when needed as it barely uses power. N100 is very efficienct for a x86 part. 
+
+---
+
+📝 Tester Notes
+
+> Windows 11 UI is responsive. If someone were to replace this without me knowing for everyday tasks I would never notice. Single Channel ram is a bummer, although this unit does come with a fan 
+  Changing resolution, usually to a higher one. Resulted in game crashes BL2, SS2, TL2	Gaming is a nightmare Older titles and emulation could not stand anymore of my life wasted in windows
+  had to move on to Linux
+  		
+  Cachyos 
+  KDE plasma is super smooth once the DE was set to personal likings. The first test resulted in a much higher FPS score. It must be the cachyos bore kernal as well as the MESA drivers which are
+  becoming much more superior. 
+  
+
+
+---
+
+📋 Summary
+
+| Category                 | Score (⭐ out of 5) |
+| ------------------------ | ------------------ |
+| Web Browsing             | ⭐⭐⭐⭐          |
+| Video Playback           | ⭐⭐⭐⭐          |
+| Light 3D Gaming          | ⭐⭐⭐            |
+| Minecraft (No Shaders)   | ⭐⭐⭐⭐          |
+| Minecraft (With Shaders) | ⭐⭐              |
+| Power Efficiency         | ⭐⭐⭐⭐ ⭐       |
+| Noise Levels             | ⭐⭐⭐ ⭐         |
