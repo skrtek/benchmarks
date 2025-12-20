@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SKRMicro Benchmark Entry</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: system-ui, sans-serif;
+  background: #0f0f0f;
+  color: #eaeaea;
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 30px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+input, textarea, select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  background: #1a1a1a;
+  color: #eaeaea;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button.secondary {
+  background: #444;
+}
+
+.output {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🖥️ SKRMicro Benchmark Entry</h1>
+
+<h2>General</h2>
+<div class="row">
+  <div>
+    <label>Device Name</label>
+    <input id="device" placeholder="Lenovo M715q">
+  </div>
+  <div>
+    <label>CPU</label>
+    <input id="cpu" placeholder="Ryzen 5 PRO 2400GE">
+  </div>
+  <div>
+    <label>GPU</label>
+    <input id="gpu" placeholder="Vega 11 / RX 570">
+  </div>
+</div>
+
+<h2>System Specifications</h2>
+<div class="row">
+  <div>
+    <label>RAM</label>
+    <input id="ram" placeholder="16GB DDR4 3200">
+  </div>
+  <div>
+    <label>Storage</label>
+    <input id="storage" placeholder="256GB NVMe">
+  </div>
+  <div>
+    <label>Operating System</label>
+    <input id="os" placeholder="CachyOS / Windows 11">
+  </div>
+</div>
+
+<h2>Power & Thermals</h2>
+<div class="row">
+  <div>
+    <label>Idle Power (W)</label>
+    <input id="idlePower" type="number">
+  </div>
+  <div>
+    <label>Load Power (W)</label>
+    <input id="loadPower" type="number">
+  </div>
+  <div>
+    <label>CPU Load Temp (°C)</label>
+    <input id="cpuTemp" type="number">
+  </div>
+  <div>
+    <label>GPU Load Temp (°C)</label>
+    <input id="gpuTemp" type="number">
+  </div>
+</div>
+
+<h2>Benchmarks</h2>
+<textarea id="benchmarks" placeholder="Geekbench, Cinebench, Minecraft FPS..."></textarea>
+
+<h2>Gaming / Real-World Use</h2>
+<textarea id="gamingNotes" placeholder="1080p settings, stutter, frametimes..."></textarea>
+
+<h2>Verdict</h2>
+<textarea id="verdict" placeholder="Strengths, weaknesses, best use cases"></textarea>
+
+<h2>Ratings</h2>
+<div class="row">
+  <div>
+    <label>Performance</label>
+    <select id="perfRating">
+      <option>⭐</option><option>⭐⭐</option><option>⭐⭐⭐</option><option>⭐⭐⭐⭐</option><option>⭐⭐⭐⭐⭐</option>
+    </select>
+  </div>
+  <div>
+    <label>Efficiency</label>
+    <select id="effRating">
+      <option>⭐</option><option>⭐⭐</option><option>⭐⭐⭐</option><option>⭐⭐⭐⭐</option><option>⭐⭐⭐⭐⭐</option>
+    </select>
+  </div>
+  <div>
+    <label>Noise</label>
+    <select id="noiseRating">
+      <option>⭐</option><option>⭐⭐</option><option>⭐⭐⭐</option><option>⭐⭐⭐⭐</option><option>⭐⭐⭐⭐⭐</option>
+    </select>
+  </div>
+</div>
+
+<button onclick="exportMarkdown()">Export Markdown</button>
+<button class="secondary" onclick="exportJSON()">Export JSON</button>
+
+<div id="calc" class="output"></div>
+
+<script>
+function slugify(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+}
+
+function getData() {
+  return {
+    device: device.value,
+    cpu: cpu.value,
+    gpu: gpu.value,
+    ram: ram.value,
+    storage: storage.value,
+    os: os.value,
+
+    power: {
+      idle_w: Number(idlePower.value),
+      load_w: Number(loadPower.value)
+    },
+
+    thermals: {
+      cpu_c: cpuTemp.value,
+      gpu_c: gpuTemp.value
+    },
+
+    benchmarks: benchmarks.value,
+    gaming_notes: gamingNotes.value,
+    verdict: verdict.value,
+
+    ratings: {
+      performance: perfRating.value,
+      efficiency: effRating.value,
+      noise: noiseRating.value
+    },
+
+    date: new Date().toISOString().split("T")[0]
+  };
+}
+
+function performancePerWatt(perfScore = 100) {
+  const load = Number(loadPower.value);
+  return load ? (perfScore / load).toFixed(2) : "N/A";
+}
+
+function download(name, content) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([content], { type: "text/plain" }));
+  a.download = name;
+  a.click();
+}
+
+function exportJSON() {
+  const d = getData();
+  const name = `${slugify(d.cpu)}_${slugify(d.device)}.json`;
+  download(name, JSON.stringify(d, null, 2));
+}
+
+function exportMarkdown() {
+  const d = getData();
+  const name = `${slugify(d.cpu)}_${slugify(d.device)}.md`;
+  const ppw = performancePerWatt();
+
+  const md = `
+# ${d.device}
+
+**CPU:** ${d.cpu}  
+**GPU:** ${d.gpu}  
+**OS:** ${d.os}  
+**Date:** ${d.date}
+
+## System Specs
+- RAM: ${d.ram}
+- Storage: ${d.storage}
+
+## Power & Thermals
+- Idle Power: ${d.power.idle_w} W
+- Load Power: ${d.power.load_w} W
+- CPU Load Temp: ${d.thermals.cpu_c} °C
+- GPU Load Temp: ${d.thermals.gpu_c} °C
+- Performance per Watt (est): ${ppw}
+
+## Benchmarks
+${d.benchmarks}
+
+## Real-World Use
+${d.gaming_notes}
+
+## Verdict
+${d.verdict}
+
+## Ratings
+- Performance: ${d.ratings.performance}
+- Efficiency: ${d.ratings.efficiency}
+- Noise: ${d.ratings.noise}
+`;
+  download(name, md.trim());
+  document.getElementById("calc").innerText =
+    `Estimated Performance/Watt: ${ppw}`;
+}
+</script>
+
+</body>
+</html>
