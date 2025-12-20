@@ -1,0 +1,75 @@
+🖥️ \Optiplex 7010 – \i5-3570 Benchmark Log
+
+Tested:\Dec 4 2025
+OS: \ChacyOS
+Form Factor: \SFF Desktop
+
+🔧 System Specs
+
+| Component | Detail                                    |
+| --------- | ----------------------------------------- |
+| CPU       | \i5-3570 4Cores @3.6GHz     |
+| GPU       | RX 6300 2GB GDDR6
+| RAM       | \16GB DDR3 1333MHz |
+| Storage   | \128Gb SSD Sata                   |
+| OS        | \CachyOS                            |
+| Display   | \2560X1080 LG Ultrawide 100Hz       |
+| Cooling   | \Air Cooled Stock            |
+
+---
+
+🔌 Power Consumption (Wall Meter)
+
+| State     | Linux (if tested) | Windows (if tested) |
+| --------- | ----------------- | ------------------- |
+| Idle      | \[W]              | \[W]                |
+| Workload  | \[W]              | \[W]                |
+| Full Load | \[W]              | \[W]                |
+
+---
+
+🧪 Benchmarks
+
+| Benchmark          | Linux (if tested) | Windows (if tested) |
+| ------------------ | ----------------- | ------------------- |
+| Silverbench        |   18920           |                     |
+| Wirple (WebGL)     |    4654           |                     |
+| WebGL Aquarium     |   30K @ 45FPS     |                     |
+| MX83 Physics       |     7680          |                     |
+| Passmark           |  S/ 2193 M/ 5501  |                     |
+| Geekbench 6        |   s/ 759 M/ 2138  |                     |
+| 5 Second Benchmark |   s/ 4632 M/ 2318 |                     |
+| CPU-Z              |                   |                     |
+| WebXPRT4           |                   |                     |
+| EV.IO              |                   |                     |
+
+---
+
+🎮 Gaming Tests
+
+| Game                   | Linux (if tested) | Windows (if tested) |
+| ---------------------- | ----------------- | ------------------- |
+| Minecraft (No Shaders) |                   |                     |
+| Minecraft (Shaders)    |                   |                     |
+| \Borderlands 2          60-80FOS   Medium FXAA on Anistropic X2
+| \[Teardown              40-60FPS Low Settings
+| \[Game Name]           |                   |                     |
+
+---
+
+🧠 Verdict
+
+> Can game at 1080P medium settings 60FPS EASY!!!!
+
+---
+
+📝 Tester Notes
+
+> For alow VRAM low power card, it sure blasts the polygons. AMD Drivers help especially FSR.
+> Still to have a machine just to rip on some games it works.
+
+---
+
+📋 Summary
+
+3.5 of 5 
