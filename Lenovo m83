@@ -1,0 +1,74 @@
+🖥️ \lenovo m83 – \i7-4770S Benchmark Log
+
+Tested:\November 2025
+OS: \CachyOS
+Form Factor: Desktop SFF
+
+---
+
+🔧 System Specs
+
+| Component | Detail                                    |
+| --------- | ----------------------------------------- |
+| CPU       | \i7-4770S 4C/8T 3.1-3.9Ghz     |
+| RAM       | \16GB DDR4 1333Mhz] |
+| Storage   | \128Gb SSD                     |
+| OS        | \CachyOS                            |
+| Display   | \2560X1090 Ultarwide      |
+| Cooling   | \Stock System            |
+
+---
+
+🔌 Power Consumption (Wall Meter)
+
+| State     | Linux (if tested) | Windows (if tested) |
+| --------- | ----------------- | ------------------- |
+| Idle      | \[W]              | \[W]                |
+| Workload  | \[W]              | \[W]                |
+| Full Load | \[W]              | \[W]                |
+
+---
+
+🧪 Benchmarks
+
+| Benchmark          | Linux (if tested) | Windows (if tested) |
+| ------------------ | ----------------- | ------------------- |
+| Silverbench        |  22329                 |                     |
+| Wirple (WebGL)     |   5139                |                     |
+| WebGL Aquarium     |   30K @ 40FPS                |                     |
+| MX83 Physics       |                   |                     |
+| Passmark           |                   |                     |
+| Geekbench 6        | S/ 1306 M/ 4101|                     |
+| 5 Second Benchmark |  S/4539 M/ 34526|                     |
+| CPU-Z              |                   |                     |
+| WebXPRT4           |                   |                     |
+| EV.IO              |                   |                     |
+
+---
+
+🎮 Gaming Tests
+
+Game Benchmarks (ran at 2560x1080 high settings unless noted)
+Muck - 120-140 FPS
+House Flipper - 77+ FPS 60 FPS solid (Very High)
+Left for dead 2 - 120 FPS Busy fights with smoke got 67 FPS
+Minecraft - BSL Shaders 66FPS No Shaders - 400+ FPS
+The Forest - 52-60 FPS
+Palworld - High 42 FPS Custom (no motion blur no medium effects) - 56 FPS
+7 daysto die - High/Medium 44 FPS
+Vampire Hunters - 76 FPS
+
+---
+
+🧠 Verdict
+
+> Still decent performance for an older system, Mind your settings and an enjoyable experience can be had.
+
+---
+
+📝 Tester Notes
+
+> Add your impressions, quirks observed, temperature details, driver notes, or anything specific from testing here.
+
+---
+
