@@ -13,7 +13,7 @@ Form Factor: Desktop SFF
 | CPU       | \i7-4770S 4C/8T 3.1-3.9Ghz     |
 | RAM       | \16GB DDR4 1333Mhz] |
 | Storage   | \128Gb SSD                     |
-| OS        | \CachyOS                            |
+| OS        | \CachyOS  Windows 10LTSC                          |
 | Display   | \2560X1090 Ultarwide      |
 | Cooling   | \Stock System            |
 
@@ -33,13 +33,13 @@ Form Factor: Desktop SFF
 
 | Benchmark          | Linux (if tested) | Windows (if tested) |
 | ------------------ | ----------------- | ------------------- |
-| Silverbench        |  22329                 |                     |
-| Wirple (WebGL)     |   5139                |                     |
-| WebGL Aquarium     |   30K @ 40FPS                |                     |
+| Silverbench        |  22329                     24054 
+| Wirple (WebGL)     |   5139                |     5362                |
+| WebGL Aquarium     |   30K @ 40FPS           30K @ 40FPS                 |
 | MX83 Physics       |                   |                     |
-| Passmark           |                   |                     |
-| Geekbench 6        | S/ 1306 M/ 4101|                     |
-| 5 Second Benchmark |  S/4539 M/ 34526|                     |
+| Passmark           |                   |   CPU S/ 2273 M/ 7173 3D- 10512|
+| Geekbench 6        | S/ 1306 M/ 4101    |S/ 1266 M/ 3975 OpenCL - 37931 Vulkan - 36939|
+| 5 Second Benchmark |  S/4539 M/ 34526   |  S/4742 M/ 34724|
 | CPU-Z              |                   |                     |
 | WebXPRT4           |                   |                     |
 | EV.IO              |                   |                     |
@@ -48,7 +48,7 @@ Form Factor: Desktop SFF
 
 🎮 Gaming Tests
 
-Game Benchmarks (ran at 2560x1080 high settings unless noted)
+Game Benchmarks CACHYOS (ran at 2560x1080 high settings unless noted)
 Muck - 120-140 FPS
 House Flipper - 77+ FPS 60 FPS solid (Very High)
 Left for dead 2 - 120 FPS Busy fights with smoke got 67 FPS
@@ -58,7 +58,15 @@ Palworld - High 42 FPS Custom (no motion blur no medium effects) - 56 FPS
 7 daysto die - High/Medium 44 FPS
 Vampire Hunters - 76 FPS
 
----
+Windows 10
+Game Benchmarks (ran at 2560x1080 high settings unless noted)
+Muck - 143 FPS
+House Flipper - 90 FPS
+Left for dead 2 - 200+ FPS
+Minecraft - BSL Shaders 74 FPS No Shaders - 390+ FPS
+The Forest - 85 FPS (open) 52 FPS in dense forest
+Palworld - 55 - 60 FPS
+7 daysto die - High preset  - 54FPS  Custom - 64 FPS (with FSR quality)---
 
 🧠 Verdict
 
