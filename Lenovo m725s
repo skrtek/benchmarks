@@ -1,0 +1,69 @@
+Test Date: January 23 2026
+System: Lenovo M725s
+OS: Windows 10 Pro
+Display: KTC 27 inch 1440P
+Browser: Edge
+
+Stock settings as purchased
+Hardware:
+CPU: Ryzen 5 Pro 2400G 4C/8T 3.9Ghz
+RAM: 8GB DDR4 2666Mhz
+GPU: Vega 11
+Storage: 112 GB SSD
+PSU: 210W
+
+Power Usage:
+Idle: 17W Daily use: 24-30W Load: 72W
+
+Benchmarks:
+Silverbench: 24197 | Wirple: 4622 | 5SBM: s/5866 m/45402 | MX83 GPU: 840 | WebglAQ: 45FPS@30k
+EV.IO: 30FPS | Basemark 3.0: 992 | Kevs 3d: 40FPS | CrystalDM: r/541MB w/71.39MB | CPU-Z: s/395 m/1992
+GB6: s/1095 m/2723 ocl/10382 | PETEST: s/2208 m/8096 3D/1226 
+Uniengine Heaven 1080P - 16FPS SuperPosition 1080p Medium - 9FPS
+
+Gaming Benchmarks: 1440P unless otherwise noted
+Call of Duty world at war default settings: 32-45FPS
+DOOM3 noAA: 60FPS
+House Flipper 1080P Medium: outside/14FPS inside/20FPS
+Serious Sam 2 HD: 1080P 60FPS
+Serious Sam 3: 1080P Default 33FPS
+Palworld 720P very low: 15FPS
+Farcry 3 1080P Low: 26FPS
+Vampire Hunters 1080P Medium: 25FPS
+Minecraft BSL Shaders: 14-23FPS  No Shaders: 60-109FPS
+
+[Added 16GB 3200Mhz (MB clocked to 2666Mhz) still on Vega 11 iGPU)
+
+Benchmarks:
+Silverbench: 28767 | Wirple: 5300 | 5SBM: s/5914 m/45185 | MX83 GPU: 840 | WebglAQ: 45FPS@30k
+EV.IO: 60FPS | Basemark 3.0: 913 | Kevs 3d: 41FPS | CPU-Z: s/411 m/2177
+GB6: s/1128 m/3378 ocl/12270 | PETEST: s/2231 m/8858 3D/2009 
+Uniengine Heaven 1080P - 27FPS SuperPosition 1080p Medium - 14FPS
+
+Gaming Benchmarks: 1440P unless otherwise noted
+Call of Duty world at war default settings: 70FPS
+DOOM3 noAA: 70+ FPS
+House Flipper: 36FPS
+Serious Sam 2 HD: 1080P 106FPS
+Serious Sam 3: 1080P Default 73FPS
+Palworld 720P very low: 27FPS
+Farcry 3 1080P Low: 53FPS
+Vampire Hunters 1080P Medium: 32FPS
+Minecraft BSL Shaders: 38FPS  No Shaders: 140FPS
+
+[Added RX 6300]
+
+Uniengine Heaven 1080P - 60FPS SuperPosition 1080p Medium - 31FPS | GB6 OCL/25584 | PETEST CPU s/2241 m/8890 3D/ 5479
+
+Gaming Benchmarks: 1440P unless otherwise noted
+Call of Duty world at war default settings: 91FPS
+DOOM3 noAA: 120 FPS
+House Flipper: 45FPS
+Serious Sam 2 HD: WNR
+Serious Sam 3: 1080P Ultra 61FPS
+Palworld 1080p low: 22FPS
+Farcry 3 Low: 62FPS
+Vampire Hunters High: 46FPS
+Minecraft BSL Shaders: 53FPS  No Shaders: 380+FPS
+
+CachyOS
