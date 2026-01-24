@@ -38,12 +38,12 @@ Capable for lightweight tasks, web apps, and some WebGL. Godot and 2D engines ar
 📷 Notes Style, Preserved
 > “Idle 11W, load 26W. Minecraft playable at 720p but low FPS. WebGL surprisingly okay. Heat buildup is real. Silent and very usable as a web box.”
 
-✅ Summary Scorecard
-| Category         | Score     |
-|------------------|-----------|
-| Web Browsing     | ⭐⭐⭐⭐      |
-| YouTube/Media    | ⭐⭐⭐       |
-| Light Gaming     | ⭐⭐        |
-| Minecraft        | ⭐         |
-| Power Efficiency | ⭐⭐⭐⭐      |
-| Noise Level      | ⭐⭐⭐⭐⭐     |
+
+Chrome OS benchmark January 10 2026
+Silverbench: 5623
+Wirple: 1134
+5SBM: s/3613 m/12629
+MX83GPU: 800
+WebGL AQM: 12FPS@30K
+GB6: s/ m/ OCL/
+Petest: s/ m/
