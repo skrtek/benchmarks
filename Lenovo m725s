@@ -66,13 +66,13 @@ Farcry 3 Low: 62FPS
 Vampire Hunters High: 46FPS
 Minecraft BSL Shaders: 53FPS  No Shaders: 380+FPS
 
-CachyOS - 16Gb ram, 512GB nVME drive, Vega 11 iGPU Brave Browser all tests ran in 1440p unless noted Tested January 24 2026
+CachyOS -  R5 2400G 16Gb ram, 512GB nVME drive, Vega 11 iGPU Brave Browser all tests ran in 1440p unless noted Tested January 24 2026
 
 Benchmarks:
 Silverbench: 25871 | Wirple: 5687 | 5SBM: s/5891 m/45282 | MX83 GPU: 3760 | WebglAQ: 42FPS@30k
-EV.IO: 94FPS | Basemark 3.0: 854 | Kevs 3d: 40FPS solid | CPU-Z:
+EV.IO: 94FPS | Basemark 3.0: 854 | Kevs 3d: 40FPS solid | CPU-X: Slow- 51202 Fast- 2210153 | Kdiskmark - R/2.8GB/s W/1.6GB/s
 GB6: s/1221 m/3713  | PETEST: s/2309 m/9148
-Uniengine Heaven  SuperPosition 
+Uniengine Heaven: 1080P High 26FPS  SuperPosition: 1080P Med 12FPS
 
 Gaming Benchmarks: 1440P unless otherwise noted
 Call of Duty world at war default settings: 30FPS Out 50FPS in
@@ -82,5 +82,47 @@ Serious Sam 2 HD:
 Serious Sam 3: 1080p 60FPS
 Palworld 720P very low: 20FPS
 Farcry 3 1080P Low: 
-Vampire Hunters 1080P Medium: 
+Vampire Hunters 1080P Medium:  25fps
+Torchlight 2 - 60FPS
+the forest- 1080P Low 20FPS
+Hello Neightbor Alpha 4 - 1080P Low 40FPS
+Left 4 dead - 100FPS default settings
+left 4 dead 2 - 35FPS default settings
+teardown- 1080P 75% low 15FPS
+Sin Emergence- 140FPS
+Whos your daddy - 1080p low 36FPS
 Minecraft BSL Shaders: 22FPS  No Shaders: 223FPS
+
+
+CachyOS - R5 2400GE 16Gb ram, 512GB nVME drive, Vega 11 iGPU Brave Browser all tests ran in 1440p unless noted Tested January 25 2026
+
+Benchmarks:
+Silverbench: 24268 | Wirple: 5805 | 5SBM: s/5857 m/42632 | MX83 GPU: 4000 | WebglAQ: 42FPS@30k
+EV.IO: 101FPS | Basemark 3.0: 1053 | Kevs 3d: 40FPS | CPU-X: Slow- 51343 Fast- 2203274 |
+GB6: s/1219 m/3781  | PETEST: s/2323 m/8690 mem/ 2130
+Uniengine Heaven: 1080P High 26FPS  SuperPosition: 1080P Med 12FPS (1716)
+
+Gaming Benchmarks: 1440P unless otherwise noted
+Call of Duty world at war default settings: 50FPS
+DOOM3 noAA: 120FPS
+House Flipper: 1080p 35FPS
+Serious Sam HD: 1080P Ultra 50FPS
+Serious Sam 3: Artifacts and missing GFX
+Palworld 720P very low: 20FPS
+Farcry 3 1080P Low: 1080P low 28-30FPS
+Vampire Hunters 1080P low:  27fps
+Torchlight 2 - 56FPS
+the forest- 1080P Low 24FPS
+Hello Neightbor Alpha 4 - 1080P Low 50FPS
+Left 4 dead - 110+FPS default settings
+left 4 dead 2 - 100+FPS high settings
+teardown- 1080P 75% low 15FPS
+Sin Emergence- 140FPS
+Whos your daddy - 1080p low 36FPS
+Borderlands 2 1080P low- 50FPS
+Dying light 1080P - 32FPS
+Minecraft BSL Shaders: 27FPS  No Shaders: 200+FPS
+
+CachyOS - R5 2400GE 16Gb ram, 512GB nVME drive, RX 6300 Brave Browser all tests ran in 1440p unless noted Tested January
+
+Heaven 1080P High - 57FPS
