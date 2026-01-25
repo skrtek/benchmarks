@@ -1,270 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>SKRMicro Benchmark Entry</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  font-family: system-ui, sans-serif;
-  background: #0f0f0f;
-  color: #eaeaea;
-  max-width: 960px;
-  margin: auto;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-}
-
-h2 {
-  margin-top: 30px;
-  border-bottom: 1px solid #333;
-  padding-bottom: 5px;
-}
-
-label {
-  display: block;
-  margin-top: 12px;
-  font-weight: 600;
-}
-
-input, textarea, select {
-  width: 100%;
-  margin-top: 6px;
-  padding: 8px;
-  background: #1a1a1a;
-  color: #eaeaea;
-  border: 1px solid #333;
-  border-radius: 6px;
-}
-
-textarea {
-  min-height: 90px;
-}
-
-.row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px 18px;
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-button.secondary {
-  background: #444;
-}
-
-.output {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #9ca3af;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Testing Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #1e1e2e;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #e0e0e0;
+            border-bottom: 4px solid #00d9ff;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        h2 {
+            color: #c0c0c0;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 5px solid #ff6b9d;
+            font-size: 1.5em;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            background: #2a2a3e;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #00d9ff;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #a0a0a0;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            color: #e0e0e0;
+            font-size: 1.1em;
+            min-height: 25px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px dashed #555;
+        }
+        
+        .info-value:focus {
+            outline: 2px solid #00d9ff;
+            background: #1a1a2e;
+            border: 1px solid #00d9ff;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #2a2a3e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #00d9ff 0%, #ff6b9d 100%);
+            color: #1e1e2e;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #3a3a4e;
+            color: #e0e0e0;
+        }
+        
+        td input {
+            width: 100%;
+            border: 1px dashed #555;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: inherit;
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+        
+        td input:focus {
+            outline: none;
+            border: 1px solid #00d9ff;
+            background: #0f0f23;
+        }
+        
+        tr:hover {
+            background: #33334a;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .power-usage {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .power-item {
+            flex: 1;
+            min-width: 150px;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .power-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .power-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            min-height: 40px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px dashed #667eea;
+        }
+        
+        .power-value:focus {
+            outline: 2px solid #667eea;
+            background: white;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .notes-area {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            resize: vertical;
+        }
+        
+        .notes-area:focus {
+            outline: none;
+            border: 2px solid #667eea;
+            background: #f0f4ff;
+        }
+        
+        .delete-btn {
+            background: #dc3545;
+            padding: 6px 12px;
+            font-size: 0.9em;
+        }
+        
+        .delete-btn:hover {
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            button {
+                display: none;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>System Testing Report</h1>
+        
+        <div class="button-group">
+            <button onclick="exportData()">📥 Export as JSON</button>
+            <button onclick="exportHTML()">📄 Export as HTML</button>
+            <button onclick="printReport()">🖨️ Print Report</button>
+            <button onclick="clearAll()">🗑️ Clear All Data</button>
+        </div>
+        
+        <div class="section">
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Test Date</div>
+                    <div class="info-value" contenteditable="true" id="testDate"></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">System</div>
+                    <div class="info-value" contenteditable="true" id="system"></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Operating System</div>
+                    <div class="info-value" contenteditable="true" id="os"></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Display</div>
+                    <div class="info-value" contenteditable="true" id="display"></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Browser</div>
+                    <div class="info-value" contenteditable="true" id="browser"></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Configuration</div>
+                    <div class="info-value" contenteditable="true" id="config"></div>
+                </div>
+            </div>
+        </div>
 
-<h1>🖥️ SKRMicro Benchmark Entry</h1>
+        <h2>Hardware Specifications</h2>
+        <div class="section">
+            <table id="hardwareTable">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Specification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>CPU</td><td><input type="text" placeholder="Enter CPU details"></td></tr>
+                    <tr><td>RAM</td><td><input type="text" placeholder="Enter RAM details"></td></tr>
+                    <tr><td>GPU</td><td><input type="text" placeholder="Enter GPU details"></td></tr>
+                    <tr><td>Storage</td><td><input type="text" placeholder="Enter storage details"></td></tr>
+                    <tr><td>PSU</td><td><input type="text" placeholder="Enter PSU details"></td></tr>
+                </tbody>
+            </table>
+        </div>
 
-<h2>General</h2>
-<div class="row">
-  <div>
-    <label>Device Name</label>
-    <input id="device" placeholder="Lenovo M715q">
-  </div>
-  <div>
-    <label>CPU</label>
-    <input id="cpu" placeholder="Ryzen 5 PRO 2400GE">
-  </div>
-  <div>
-    <label>GPU</label>
-    <input id="gpu" placeholder="Vega 11 / RX 570">
-  </div>
-</div>
+        <h2>Power Usage</h2>
+        <div class="section power-usage">
+            <div class="power-item">
+                <div class="power-label">Idle</div>
+                <div class="power-value" contenteditable="true" id="powerIdle"></div>
+            </div>
+            <div class="power-item">
+                <div class="power-label">Daily Use</div>
+                <div class="power-value" contenteditable="true" id="powerDaily"></div>
+            </div>
+            <div class="power-item">
+                <div class="power-label">Load</div>
+                <div class="power-value" contenteditable="true" id="powerLoad"></div>
+            </div>
+        </div>
 
-<h2>System Specifications</h2>
-<div class="row">
-  <div>
-    <label>RAM</label>
-    <input id="ram" placeholder="16GB DDR4 3200">
-  </div>
-  <div>
-    <label>Storage</label>
-    <input id="storage" placeholder="256GB NVMe">
-  </div>
-  <div>
-    <label>Operating System</label>
-    <input id="os" placeholder="CachyOS / Windows 11">
-  </div>
-</div>
+        <h2>Benchmarks</h2>
+        <div class="section">
+            <table id="benchmarkTable">
+                <thead>
+                    <tr>
+                        <th>Benchmark</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Silverbench</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>Wirple</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>5SBM</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>MX83 GPU</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>WebglAQ</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>EV.IO</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>Basemark 3.0</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>Kevs 3D</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>CrystalDM</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>CPU-Z</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>Geekbench 6</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>PETEST</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>Unigine Heaven 1080P</td><td><input type="text" placeholder="Score"></td></tr>
+                    <tr><td>SuperPosition 1080P Medium</td><td><input type="text" placeholder="Score"></td></tr>
+                </tbody>
+            </table>
+        </div>
 
-<h2>Power & Thermals</h2>
-<div class="row">
-  <div>
-    <label>Idle Power (W)</label>
-    <input id="idlePower" type="number">
-  </div>
-  <div>
-    <label>Load Power (W)</label>
-    <input id="loadPower" type="number">
-  </div>
-  <div>
-    <label>CPU Load Temp (°C)</label>
-    <input id="cpuTemp" type="number">
-  </div>
-  <div>
-    <label>GPU Load Temp (°C)</label>
-    <input id="gpuTemp" type="number">
-  </div>
-</div>
+        <h2>Gaming Benchmarks</h2>
+        <div class="section">
+            <table id="gamingTable">
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Settings</th>
+                        <th>Performance</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Game name"></td>
+                        <td><input type="text" placeholder="Graphics settings"></td>
+                        <td><input type="text" placeholder="FPS / Performance"></td>
+                        <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="addGameRow()">➕ Add Game</button>
+        </div>
 
-<h2>Benchmarks</h2>
-<textarea id="benchmarks" placeholder="Geekbench, Cinebench, Minecraft FPS..."></textarea>
+        <h2>Notes</h2>
+        <div class="section">
+            <textarea class="notes-area" id="notes" placeholder="Add any additional notes, observations, or comments here..."></textarea>
+        </div>
+    </div>
 
-<h2>Gaming / Real-World Use</h2>
-<textarea id="gamingNotes" placeholder="1080p settings, stutter, frametimes..."></textarea>
+    <script>
+        function addGameRow() {
+            const table = document.getElementById('gamingTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td><input type="text" placeholder="Game name"></td>
+                <td><input type="text" placeholder="Graphics settings"></td>
+                <td><input type="text" placeholder="FPS / Performance"></td>
+                <td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+            `;
+        }
 
-<h2>Verdict</h2>
-<textarea id="verdict" placeholder="Strengths, weaknesses, best use cases"></textarea>
+        function deleteRow(btn) {
+            const row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
 
-<h2>Ratings</h2>
-<div class="row">
-  <div>
-    <label>Performance</label>
-    <select id="perfRating">
-      <option>⭐</option><option>⭐⭐</option><option>⭐⭐⭐</option><option>⭐⭐⭐⭐</option><option>⭐⭐⭐⭐⭐</option>
-    </select>
-  </div>
-  <div>
-    <label>Efficiency</label>
-    <select id="effRating">
-      <option>⭐</option><option>⭐⭐</option><option>⭐⭐⭐</option><option>⭐⭐⭐⭐</option><option>⭐⭐⭐⭐⭐</option>
-    </select>
-  </div>
-  <div>
-    <label>Noise</label>
-    <select id="noiseRating">
-      <option>⭐</option><option>⭐⭐</option><option>⭐⭐⭐</option><option>⭐⭐⭐⭐</option><option>⭐⭐⭐⭐⭐</option>
-    </select>
-  </div>
-</div>
+        function collectData() {
+            const data = {
+                testInfo: {
+                    testDate: document.getElementById('testDate').textContent,
+                    system: document.getElementById('system').textContent,
+                    os: document.getElementById('os').textContent,
+                    display: document.getElementById('display').textContent,
+                    browser: document.getElementById('browser').textContent,
+                    config: document.getElementById('config').textContent
+                },
+                hardware: {},
+                powerUsage: {
+                    idle: document.getElementById('powerIdle').textContent,
+                    daily: document.getElementById('powerDaily').textContent,
+                    load: document.getElementById('powerLoad').textContent
+                },
+                benchmarks: [],
+                games: [],
+                notes: document.getElementById('notes').value
+            };
 
-<button onclick="exportMarkdown()">Export Markdown</button>
-<button class="secondary" onclick="exportJSON()">Export JSON</button>
+            // Collect hardware
+            const hwRows = document.getElementById('hardwareTable').getElementsByTagName('tbody')[0].rows;
+            for (let row of hwRows) {
+                const component = row.cells[0].textContent;
+                const spec = row.cells[1].querySelector('input').value;
+                if (spec) data.hardware[component] = spec;
+            }
 
-<div id="calc" class="output"></div>
+            // Collect benchmarks
+            const bmRows = document.getElementById('benchmarkTable').getElementsByTagName('tbody')[0].rows;
+            for (let row of bmRows) {
+                const name = row.cells[0].textContent;
+                const score = row.cells[1].querySelector('input').value;
+                if (score) {
+                    data.benchmarks.push({ name, score });
+                }
+            }
 
-<script>
-function slugify(text) {
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
-}
+            // Collect games
+            const gameRows = document.getElementById('gamingTable').getElementsByTagName('tbody')[0].rows;
+            for (let row of gameRows) {
+                const game = row.cells[0].querySelector('input').value;
+                const settings = row.cells[1].querySelector('input').value;
+                const performance = row.cells[2].querySelector('input').value;
+                if (game || settings || performance) {
+                    data.games.push({ game, settings, performance });
+                }
+            }
 
-function getData() {
-  return {
-    device: device.value,
-    cpu: cpu.value,
-    gpu: gpu.value,
-    ram: ram.value,
-    storage: storage.value,
-    os: os.value,
+            return data;
+        }
 
-    power: {
-      idle_w: Number(idlePower.value),
-      load_w: Number(loadPower.value)
-    },
+        function exportData() {
+            const data = collectData();
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'system-test-' + new Date().toISOString().split('T')[0] + '.json';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
 
-    thermals: {
-      cpu_c: cpuTemp.value,
-      gpu_c: gpuTemp.value
-    },
+        function exportHTML() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'system-test-' + new Date().toISOString().split('T')[0] + '.html';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
 
-    benchmarks: benchmarks.value,
-    gaming_notes: gamingNotes.value,
-    verdict: verdict.value,
+        function printReport() {
+            window.print();
+        }
 
-    ratings: {
-      performance: perfRating.value,
-      efficiency: effRating.value,
-      noise: noiseRating.value
-    },
-
-    date: new Date().toISOString().split("T")[0]
-  };
-}
-
-function performancePerWatt(perfScore = 100) {
-  const load = Number(loadPower.value);
-  return load ? (perfScore / load).toFixed(2) : "N/A";
-}
-
-function download(name, content) {
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([content], { type: "text/plain" }));
-  a.download = name;
-  a.click();
-}
-
-function exportJSON() {
-  const d = getData();
-  const name = `${slugify(d.cpu)}_${slugify(d.device)}.json`;
-  download(name, JSON.stringify(d, null, 2));
-}
-
-function exportMarkdown() {
-  const d = getData();
-  const name = `${slugify(d.cpu)}_${slugify(d.device)}.md`;
-  const ppw = performancePerWatt();
-
-  const md = `
-# ${d.device}
-
-**CPU:** ${d.cpu}  
-**GPU:** ${d.gpu}  
-**OS:** ${d.os}  
-**Date:** ${d.date}
-
-## System Specs
-- RAM: ${d.ram}
-- Storage: ${d.storage}
-
-## Power & Thermals
-- Idle Power: ${d.power.idle_w} W
-- Load Power: ${d.power.load_w} W
-- CPU Load Temp: ${d.thermals.cpu_c} °C
-- GPU Load Temp: ${d.thermals.gpu_c} °C
-- Performance per Watt (est): ${ppw}
-
-## Benchmarks
-${d.benchmarks}
-
-## Real-World Use
-${d.gaming_notes}
-
-## Verdict
-${d.verdict}
-
-## Ratings
-- Performance: ${d.ratings.performance}
-- Efficiency: ${d.ratings.efficiency}
-- Noise: ${d.ratings.noise}
-`;
-  download(name, md.trim());
-  document.getElementById("calc").innerText =
-    `Estimated Performance/Watt: ${ppw}`;
-}
-</script>
-
+        function clearAll() {
+            if (confirm('Are you sure you want to clear all data? This cannot be undone.')) {
+                location.reload();
+            }
+        }
+    </script>
 </body>
 </html>
