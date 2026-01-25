@@ -66,4 +66,21 @@ Farcry 3 Low: 62FPS
 Vampire Hunters High: 46FPS
 Minecraft BSL Shaders: 53FPS  No Shaders: 380+FPS
 
-CachyOS
+CachyOS - 16Gb ram, 512GB nVME drive, Vega 11 iGPU Brave Browser all tests ran in 1440p unless noted
+
+Benchmarks:
+Silverbench: 25871 | Wirple: 5687 | 5SBM: s/5891 m/45282 | MX83 GPU: 3760 | WebglAQ: 42FPS@30k
+EV.IO: 94FPS | Basemark 3.0: 854 | Kevs 3d: 40FPS solid | CPU-Z:
+GB6: s/1221 m/3713  | PETEST: s/2309 m/9148
+Uniengine Heaven  SuperPosition 
+
+Gaming Benchmarks: 1440P unless otherwise noted
+Call of Duty world at war default settings: 30FPS Out 50FPS in
+DOOM3 noAA: 94FPS
+House Flipper: 1080p 35FPS
+Serious Sam 2 HD: 
+Serious Sam 3: 1080p 60FPS
+Palworld 720P very low: 20FPS
+Farcry 3 1080P Low: 
+Vampire Hunters 1080P Medium: 
+Minecraft BSL Shaders: 22FPS  No Shaders: 223FPS
