@@ -94,7 +94,7 @@ Whos your daddy - 1080p low 36FPS
 Minecraft BSL Shaders: 22FPS  No Shaders: 223FPS
 
 
-CachyOS - R5 2400GE 16Gb ram, 512GB nVME drive, Vega 11 iGPU Brave Browser all tests ran in 1440p unless noted Tested January 25 2026
+CachyOS - R5 Pro 2400GE 16Gb ram, 512GB nVME drive, Vega 11 iGPU Brave Browser all tests ran in 1440p unless noted Tested January 25 2026
 
 Benchmarks:
 Silverbench: 24268 | Wirple: 5805 | 5SBM: s/5857 m/42632 | MX83 GPU: 4000 | WebglAQ: 42FPS@30k
@@ -125,4 +125,24 @@ Minecraft BSL Shaders: 27FPS  No Shaders: 200+FPS
 
 CachyOS - R5 2400GE 16Gb ram, 512GB nVME drive, RX 6300 Brave Browser all tests ran in 1440p unless noted Tested January
 
-Heaven 1080P High - 57FPS
+Heaven 1080P High - 57FPS  Superposition - 32FPS 4327
+
+COD WAR - 91FPS
+Doom 2016 - low 50FPS
+Farcry 3- low 35FPS
+Palworld 900P - 40FPS
+Borderlands 2 - med 45-60FPS
+Dying Light - 1080p med 57FPS
+Vampire Hunters - 1080p High 22FPS
+The Forest - 1080P Low 45FPS
+Helllo Neighbor Alpha 4 - med 57FPS
+House FLipper - 1080P Food 50FPS
+SSHD 1080p Ultra - 60FPS Outside 100FPS inside
+Teardown low - 35FPS
+Torchligh 2 - 75FPS
+L4d - high 80FPS
+L4D2 - High 80FPS
+Half Life 2 - 100+FPS
+
+
+
