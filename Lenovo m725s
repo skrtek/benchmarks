@@ -180,3 +180,19 @@ SSHD - 81-100+FPS
 Minecradt BSL low - 60FPS  No Shaders - 300+
 Teardown low - 37-52FPS
 
+
+Feb 5 2026
+Upgraded Ryzen 5 2600 Windows 10 16gb 2667mhz matched
+
+Benchmarks:
+Silverbench: 36424 | Wirple:6232| 5SBM: s/5885 m/66105 | MX83 GPU: 2080 | WebglAQ: 48FPS@30K
+EV.IO: 62FPS | Basemark 3.0: 1453v| Kevs 3d: 60FPS vsyncd | CPU-z: S/ 436 m/ 3381 |
+GB6: s/1213 m/5200 ocl/ 25345 | PETEST: s/2262 m/13251 3d/5577 total/ 4988
+heave: 52FPS 1080P high Superpositon: 31FPS SKRBench extreme - 60314
+
+Games
+Palworld 1080P low - 22-32FPS 
+SS3 BSE - 60FPS 1080p Ultra
+Farcry 3 - 1440p low 62FPS
+Soom 3 - 1440P 2XAA 120FPS
+Houseflipper - 1080p Medium - 60FPS
