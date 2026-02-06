@@ -37,14 +37,16 @@ Form Factor: Desktop SFF
 | Silverbench        |  22329                     24054 
 | Wirple (WebGL)     |   5139                |     5362                |
 | WebGL Aquarium     |   30K @ 40FPS           30K @ 40FPS                 |
-| MX83 Physics       |                   |                     |
-| Passmark           |                   |   CPU S/ 2273 M/ 7173 3D- 10512|
+| MX83 GPU      |         8640          |             4000
+| Passmark           | S/ 1339 m/ 7524 mem/4150          |   CPU S/ 2273 M/ 7173 3D- 10512|
 | Geekbench 6        | S/ 1306 M/ 4101    |S/ 1266 M/ 3975 OpenCL - 37931 Vulkan - 36939|
 | 5 Second Benchmark |  S/4539 M/ 34526   |  S/4742 M/ 34724|
-| CPU-Z              |                   |                     |
+| CPU-Z              |                   |   s/398 m/ 1915                  |
 | WebXPRT4           |                   |                     |
-| EV.IO              |                   |                     |
-
+| EV.IO              |    60fps               |   102FPS                  |
+Kevs 3d                     60fps                  100FPS
+basemark                   1184                 1576
+SKRBench                    22933               extreme: 20084
 ---
 
 🎮 Gaming Tests
@@ -55,9 +57,11 @@ House Flipper - 77+ FPS 60 FPS solid (Very High)
 Left for dead 2 - 120 FPS Busy fights with smoke got 67 FPS
 Minecraft - BSL Shaders 66FPS No Shaders - 400+ FPS
 The Forest - 52-60 FPS
-Palworld - High 42 FPS Custom (no motion blur no medium effects) - 56 FPS
+Palworld - High 42 FPS Custom (no motion blur no medium effects) - 57 FPS
 7 daysto die - High/Medium 44 FPS
 Vampire Hunters - 76 FPS
+heaven - high 121FPS scpre 3059
+glmark - 12075
 
 Windows 10
 Game Benchmarks (ran at 2560x1080 high settings unless noted)
@@ -68,6 +72,8 @@ Minecraft - BSL Shaders 74 FPS No Shaders - 390+ FPS
 The Forest - 85 FPS (open) 52 FPS in dense forest
 Palworld - 55 - 60 FPS
 7 daysto die - High preset  - 54FPS  Custom - 64 FPS (with FSR quality)---
+Heaven - 1080p high - 70FPS
+Superpostion high - 47FPS
 
 🧠 Verdict
 
