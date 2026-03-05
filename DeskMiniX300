@@ -124,3 +124,89 @@ Whos your daddy -
 Borderlands 2 - 
 Dying light 1080P - 
 Minecraft BSL Shaders:   No Shaders: 
+
+Date march 2 2026
+
+OS Win 11
+System hardware ASrock x300W
+	CPU - R5 5600G
+	GPU - Vega 7
+	MEM - 16GB DDR4 3200Mhz
+        DRV - 512GB nVME Samsung
+Display - KTC 27" 1440P 100Hz
+Browser - Brave | edge
+
+Silverbench - (br)54369 (ed)58326 
+Wirple - (br) 7483  (ed) 7192
+5SBM - (br) s/9126 m/ 104164 (ed) s/ 9208 m/103936
+SKRBench - (br)84888 5.66Gflops    (ed) 82146 5.48 Gflops
+Kevs3d Waves - 53 fps (br)    (ed) 53FPS
+WGLAQ - (br) 73fps   (ed) 71 FPS
+MX83GPU - (br) 840    (ed) 880
+Basemark - (br)  1525  (ed) 1761
+EV.IO - 100Fps 
+Cpu-z - s/604 m/4574
+Crystal Diskmark - Read/3.1GB Write/1.6GB
+Passmark - total/9707 s/3263 m/20034
+Geekbench 6 - s/2026 m/8054 ocl/15210
+Unigine Heaven - 1080p high 35fps score 889 1080p low 70fps score 1772
+	Superpostion -1080p medium 19FPS score 2554
+Minecraft - 1080p BSL Shaders med - 48FPS      No Shaders 300+FPS
+
+Games Bench
+FarCry 3 1080p 66FPS
+House flipper 1080P low 44FPS
+SS3 - 1080p Default 53FPS
+Vampire Hunters 1080P low 44fps
+Xplayer 1440p HIGH 60FPS
+
+Date March 3 2026
+OS Cachy
+System hardware ASrock x300W
+	CPU - R5 5600G
+	GPU - Vega 7
+	MEM - 16GB DDR4 3200Mhz
+Display  1440P 100Hz
+Browser Brave
+
+Silverbench - 54596
+Wirple - 9535
+5SBM - s/ 9213 m/ 104183
+SKRBench - 93326 6.22Gflops
+Kevs3d Waves -51fps
+WGLAQ - 78fps
+Basemark - 1387
+EV.IO - 100fps
+Passmark - s/3273 m/19990 mem/2697
+Geekbench 6 - s/2110 m/8425
+Unigine Heaven 34fps 859 1080p high
+	Superpostion 1080p med 18fps score 2432
+Minecraft - bsl shader 1080p med 44    no shader 400+
+
+Games Bench
+GhostRunner - 1080p low 22fps
+Farcry 3 - 1080p low - 77fps
+House Flipper 1080p low 30-40fps
+seriosu sam 3
+storyplayer - 60fps
+vampire hunters - 1080p low 30 fps
+
+
+March 4 2026
+MACOS VENTUREA RYZENTOSH Brave browser does not work with GPU Acceleration only sees 6 cores?
+                         Safari Only sees 8 cores?
+
+Silverbench - (br) 52716 (safari) 23841
+Wirple - (BR) 4623 (safari) 9497
+5sbm.com - (BR) 6cores s/9143 m/53699 (safari 8core) s/9157 m/62249
+Skrbench - (BR) 29295 | 3.91 GFLOPS (safari) 60045 | 6.00GFLOPS
+Kevs 3d - safari 45FPS
+WGLAQ - safari 28fps@39K
+Webgl pasta - 72FPS
+mx83GPU - safari 3280
+Basemark - safari 1195
+EV.io - 56FPS
+Passmark - 
+GB 6 - s/ 1949 M/7865 ocl/17063 metal/21792
+
+Minecraft - bsl shade 900p low 60fps 1440p 31 fps no shaders 165+ fps
