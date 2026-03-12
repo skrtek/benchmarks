@@ -1,7 +1,7 @@
 Ryzen 5 3500U | 12GB DDR4 2400Mhz | 64GB nVME | Vega 8
 
 
-Chrome OS benchmark January 12 2026
+Chrome OS Flex benchmark January 12 2026
 Silverbench: 19612
 Wirple: 4615
 5SBM: s/5591 m/38186
@@ -13,3 +13,20 @@ WebGL AQM: 30FPS@30K
 GB6: s/1061 m/2951 
 Petest: s/2113 m/7607 mem/1696
 Minecraft Bsl Shaders 11FPS No Shaders/ 60FPS
+
+
+CachyOS Brave Browser March 12 2026 2560x1080
+Silverbench: 17337
+Wirple: 4407
+5SBM: s/5541 m/38147
+SKRBENCH A1 - Stress S:17607       GFLOPS: 1.76
+MX83GPU: 2640
+KEVS 3D: 30  FPS
+Basemark 3.0: 705
+EV.io: 48 fos
+WebGL AQM: 29 FPS@30K
+GB6: s/933 m/1366
+Petest: s/m/ mem/
+VKMARK
+GLMARK2
+Minecraft 1080p Bsl Shaders min low 14fps No Shaders/ 62fps
