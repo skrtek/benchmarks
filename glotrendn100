@@ -92,15 +92,32 @@ and use it when needed as it barely uses power. N100 is very efficienct for a x8
 
 
 ---
+March 16 2026
+Edge Browser
+8GB Ram 1080P
 
-📋 Summary
+Silverbench - 14596
+Wirple - 4388
+5SBM - s/5188 m/17830
+skrbench - 4182 .84GFLOPS
+basemark - 171
+webglAQ - 25FPS 30K
+kevs3d - 12FPS
+x83 gpu - 440
+ev.io - 57FPS
+CPUz - s/362 m/ 1262
+GB6 - s/1217 m/2640 ocl/3260
+Passmark- s/2080 m/6032 3d/882 mem/2232 total-1325
+Heaven - 1080p low 28FpS score 710
+Superposition - 720p low 16FPS score - 2135
+Minecraft - bsl/16fps no shaders - 135fps 1080P
+COD World at war - 1080p 16FPS
+doom 3 - 1080p 2xAA 65FPS
+Farcry 3 - 1080p low 26fps
+SS3 - 1080P VLow 60FPS
+valheim - 720P Vlow 40fps
+vampire Hunters 0 1080p low 14fps 720p low - 22fps
 
-| Category                 | Score (⭐ out of 5) |
-| ------------------------ | ------------------ |
-| Web Browsing             | ⭐⭐⭐⭐          |
-| Video Playback           | ⭐⭐⭐⭐          |
-| Light 3D Gaming          | ⭐⭐⭐            |
-| Minecraft (No Shaders)   | ⭐⭐⭐⭐          |
-| Minecraft (With Shaders) | ⭐⭐              |
-| Power Efficiency         | ⭐⭐⭐⭐ ⭐       |
-| Noise Levels             | ⭐⭐⭐ ⭐         |
+
+
+
