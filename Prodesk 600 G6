@@ -13,7 +13,7 @@ GB6: s/1406 m/5287 OCL/
 Petest: s/2570 m/11921 mem/2569
 Minecraft Bsl Shaders 10FPS No Shaders/ 84FPS
 
-win 10 ltsc edge broweser UWHD March 15 2026
+win 10 ltsc edge UWHD LG March 15 2026
 Silverbench: 29588
 Wirple: 5939
 skrbench: 46656 3.11GFLOPS
@@ -25,3 +25,34 @@ EV.io: 44FPS
 WebGL AQM: 30FPS@30K
 GB6: s/1447 m/5440 OCL/5911
 Petest: s/2528 m/11691 3d/1372 total = 2226
+Heaven 1080P low 36FPS score-907
+Superposition 720P low 20fps score-2768
+FarCry 3 1080p low - 20fps
+COD World at War 1080p Low - 46FPS
+Vampire Hunters - 1080P low 16FPS
+SS3 - 1080p default 30FPS
+Valhiem 1080p low 30FPS
+fallout new vegas 1080p low 30FPS
+Doom3 1080P 2XAA - 56+ FPS
+Castle Flipper 720P low - 14fps
+Minecraft 1080P low BSL/ 17FPS No Shader/ 200+ FPS
+
+Win 11 LTSC edge lg Ultra wide montior
+Silverbench: 27229
+Wirple: 5963
+skrbench: 47204 3.15GFLOPS
+5SBM: s/6117 m/66865
+MX83GPU: 560
+KEVS 3D: 18 FPS
+Basemark 3.0: 1036
+EV.io: 58FPS
+WebGL AQM: 26FPS@30K
+GB6: s/1451 m/5359 OCL/5941
+Petest: s/2505 m/11579 3d/1360 mem/3052 total = 2138
+Heaven 1080P low 36FPS score-908
+Superposition 720P low 20fps score-2740
+FarCry 3 1080p low - 22fps
+Vampire Hunters - 1080P low 18FPS
+SS3 - 1080p default 35FPS
+Valhiem 1080p low 30FPS
+Minecraft 1080P low BSL/ 18FPS No Shader/ 280+ FPS
