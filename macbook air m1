@@ -1,14 +1,18 @@
 
 November 2025
 
-MACOS MacBook Air m1 8GB tahoe 2560x1080
+MACOS MacBook Air m1 8GB tahoe 
 Silverbench- 34205
 Wirple - 7834
 5SBM - S/4968 M/ 31281
 GLAQ - 30K @ 54 FPS - 2560x1600
+SKRbench - 35582 3.56GFLOPS
+X83 GPU - 4640
+Kevs3d - 58FPS
+basemark - 1493
 GeekBench 6 - S/ 2421 M/ 8817 OpenCL - 21619 Metal - 34239
 Passmark - CPU S/ 3812 M/ 15503
-
+EV.IO - 76FPS
 
 Game Benchmarks (ran at 2560x1080 high settings unless noted)
 Muck - 25FPS
