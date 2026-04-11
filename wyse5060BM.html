@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyse 5060 Benchmark Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #0f0f0f;
+            color: #e0e0e0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subhead {
+            color: #888;
+            margin-bottom: 40px;
+            border-left: 3px solid #3a86ff;
+            padding-left: 16px;
+        }
+
+        .specs {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .spec-item {
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .spec-value {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .chart-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        canvas {
+            max-height: 300px;
+            width: 100%;
+        }
+
+        .benchmark-list {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+        }
+
+        .benchmark-list h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .os-section {
+            background: #151515;
+            border-radius: 10px;
+            padding: 16px 20px;
+        }
+
+        .os-section h4 {
+            color: #3a86ff;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .bench-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #252525;
+            font-size: 14px;
+        }
+
+        .bench-name {
+            color: #aaa;
+        }
+
+        .bench-score {
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-weight: 500;
+        }
+
+        .note {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px 24px;
+            color: #888;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 700px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wyse 5060 Thin Client</h1>
+    <div class="subhead">Benchmark comparison: Windows 10 LTSC vs CachyOS</div>
+
+    <div class="specs">
+        <div class="spec-item">
+            <div class="spec-label">CPU</div>
+            <div class="spec-value">AMD G-Series GX-424CC (4 cores)</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">RAM</div>
+            <div class="spec-value">16GB DDR3</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Storage</div>
+            <div class="spec-value">128GB SSD</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Test Date</div>
+            <div class="spec-value">March 18, 2026</div>
+        </div>
+        <div class="spec-item">
+            <div class="spec-label">Resolution</div>
+            <div class="spec-value">1080p</div>
+        </div>
+    </div>
+
+    <div class="chart-grid">
+        <div class="chart-card">
+            <div class="chart-title">Geekbench 6 Comparison</div>
+            <canvas id="geekbenchChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">5SBM & SKRBench</div>
+            <canvas id="computeChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">GPU & Browser Tests</div>
+            <canvas id="gpuChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">Unigine & Gaming FPS</div>
+            <canvas id="gamingChart"></canvas>
+        </div>
+    </div>
+
+    <div class="benchmark-list">
+        <h3>Complete Benchmark Results</h3>
+        <div class="two-column">
+            <div class="os-section">
+                <h4>Windows 10 LTSC</h4>
+                <div class="bench-row"><span class="bench-name">Silverbench</span><span class="bench-score">5823</span></div>
+                <div class="bench-row"><span class="bench-name">Wirple</span><span class="bench-score">912</span></div>
+                <div class="bench-row"><span class="bench-name">5SBM (Single/Multi)</span><span class="bench-score">3700 / 13654</span></div>
+                <div class="bench-row"><span class="bench-name">SKRBench (GFLOPS)</span><span class="bench-score">824 (0.16)</span></div>
+                <div class="bench-row"><span class="bench-name">Kevs3d Waves</span><span class="bench-score">5 fps</span></div>
+                <div class="bench-row"><span class="bench-name">WGLAQ</span><span class="bench-score">10 fps</span></div>
+                <div class="bench-row"><span class="bench-name">MX83GPU</span><span class="bench-score">520</span></div>
+                <div class="bench-row"><span class="bench-name">Basemark</span><span class="bench-score">287</span></div>
+                <div class="bench-row"><span class="bench-name">EV.IO</span><span class="bench-score">20 fps</span></div>
+                <div class="bench-row"><span class="bench-name">Passmark Total</span><span class="bench-score">634.4</span></div>
+                <div class="bench-row"><span class="bench-name">Novabench</span><span class="bench-score">412</span></div>
+                <div class="bench-row"><span class="bench-name">CPU-z (Single/Multi)</span><span class="bench-score">118 / 437</span></div>
+                <div class="bench-row"><span class="bench-name">Minecraft (No Shaders)</span><span class="bench-score">20 fps</span></div>
+                <div class="bench-row"><span class="bench-name">Minecraft (BSL)</span><span class="bench-score">5 fps</span></div>
+                <div class="bench-row"><span class="bench-name">Far Cry 3 (720p low)</span><span class="bench-score">20 fps</span></div>
+            </div>
+            <div class="os-section">
+                <h4>CachyOS</h4>
+                <div class="bench-row"><span class="bench-name">Silverbench</span><span class="bench-score">5323</span></div>
+                <div class="bench-row"><span class="bench-name">Wirple</span><span class="bench-score">1200 (1096 2nd)</span></div>
+                <div class="bench-row"><span class="bench-name">5SBM (Single/Multi)</span><span class="bench-score">3657 / 12583</span></div>
+                <div class="bench-row"><span class="bench-name">SKRBench (GFLOPS)</span><span class="bench-score">1280 (0.26)</span></div>
+                <div class="bench-row"><span class="bench-name">Kevs3d Waves</span><span class="bench-score">7 fps</span></div>
+                <div class="bench-row"><span class="bench-name">WGLAQ</span><span class="bench-score">10 fps</span></div>
+                <div class="bench-row"><span class="bench-name">MX83GPU</span><span class="bench-score">640</span></div>
+                <div class="bench-row"><span class="bench-name">Basemark</span><span class="bench-score">240</span></div>
+                <div class="bench-row"><span class="bench-name">EV.IO</span><span class="bench-score">27 fps</span></div>
+                <div class="bench-row"><span class="bench-name">Passmark CPU (S/M)</span><span class="bench-score">816 / 1852</span></div>
+                <div class="bench-row"><span class="bench-name">Novabench</span><span class="bench-score">Incomplete (CPU -15)</span></div>
+                <div class="bench-row"><span class="bench-name">VKmark</span><span class="bench-score">1368</span></div>
+                <div class="bench-row"><span class="bench-name">glmark2</span><span class="bench-score">1708</span></div>
+                <div class="bench-row"><span class="bench-name">Unigine Heaven</span><span class="bench-score">17 fps</span></div>
+                <div class="bench-row"><span class="bench-name">Unigine Superposition</span><span class="bench-score">6 fps</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> CachyOS performed better on compute-heavy tests (SKRBench, Kevs3d Waves, MX83GPU, EV.IO).<br>
+        Windows 10 LTSC performed better on Geekbench 6, Basemark, and CPU-z. Gaming is limited by GPU on both OSes.
+    </div>
+</div>
+
+<script>
+    // Geekbench 6 Chart
+    new Chart(document.getElementById('geekbenchChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Single Core', 'Multi Core', 'Vulkan'],
+            datasets: [
+                { label: 'Windows 10 LTSC', data: [257, 684, 1650], backgroundColor: '#3a86ff', borderRadius: 6 },
+                { label: 'CachyOS', data: [246, 432, null], backgroundColor: '#9b59b6', borderRadius: 6 }
+            ]
+        },
+        options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+    });
+
+    // Compute Benchmarks: 5SBM Multi and SKRBench (scaled GFLOPS*1000 for visibility)
+    new Chart(document.getElementById('computeChart'), {
+        type: 'bar',
+        data: {
+            labels: ['5SBM (Multi)', 'SKRBench (x1000 GFLOPS)'],
+            datasets: [
+                { label: 'Windows 10 LTSC', data: [13654, 160], backgroundColor: '#3a86ff', borderRadius: 6 },
+                { label: 'CachyOS', data: [12583, 260], backgroundColor: '#9b59b6', borderRadius: 6 }
+            ]
+        },
+        options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+    });
+
+    // GPU & Browser Tests
+    new Chart(document.getElementById('gpuChart'), {
+        type: 'bar',
+        data: {
+            labels: ['MX83GPU', 'Basemark', 'EV.IO (fps x10)', 'Kevs3d Waves (fps)'],
+            datasets: [
+                { label: 'Windows 10 LTSC', data: [520, 287, 200, 5], backgroundColor: '#3a86ff', borderRadius: 6 },
+                { label: 'CachyOS', data: [640, 240, 270, 7], backgroundColor: '#9b59b6', borderRadius: 6 }
+            ]
+        },
+        options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+    });
+
+    // Gaming & Unigine
+    new Chart(document.getElementById('gamingChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Unigine Heaven', 'Unigine Superposition', 'Minecraft (No Shaders)', 'Far Cry 3'],
+            datasets: [
+                { label: 'Windows 10 LTSC', data: [17, 6, 20, 20], backgroundColor: '#3a86ff', borderRadius: 6 },
+                { label: 'CachyOS', data: [17, 6, null, null], backgroundColor: '#9b59b6', borderRadius: 6 }
+            ]
+        },
+        options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+    });
+</script>
+</body>
+</html>
