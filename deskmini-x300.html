@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASRock DeskMini X300 - Benchmark Evolution</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #0f0f0f;
+            color: #e0e0e0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subhead {
+            color: #888;
+            margin-bottom: 30px;
+            border-left: 3px solid #3a86ff;
+            padding-left: 16px;
+        }
+
+        /* Config Toggle Buttons */
+        .config-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+            background: #1a1a1a;
+            padding: 16px 20px;
+            border-radius: 12px;
+        }
+
+        .config-btn {
+            background: #2a2a2a;
+            border: none;
+            color: #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .config-btn:hover {
+            background: #3a3a3a;
+        }
+
+        .config-btn.active {
+            background: #3a86ff;
+            color: white;
+        }
+
+        /* Specs Panel */
+        .specs {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .spec-item {
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .spec-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .spec-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Power Panel */
+        .power-panel {
+            background: #151515;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+        }
+
+        .power-panel h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: #3a86ff;
+        }
+
+        .power-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .power-item {
+            flex: 1;
+            background: #1a1a1a;
+            padding: 12px 16px;
+            border-radius: 8px;
+        }
+
+        .power-label {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .power-value {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Chart Grid */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .chart-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .chart-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        canvas {
+            max-height: 280px;
+            width: 100%;
+        }
+
+        /* Benchmark List */
+        .benchmark-list {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+        }
+
+        .benchmark-list h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .os-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .os-section {
+            background: #151515;
+            border-radius: 10px;
+            padding: 16px 20px;
+        }
+
+        .os-section h4 {
+            color: #3a86ff;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .bench-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #252525;
+            font-size: 13px;
+        }
+
+        .bench-name {
+            color: #aaa;
+        }
+
+        .bench-score {
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .gaming-section {
+            background: #151515;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+
+        .gaming-section h4 {
+            color: #3a86ff;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .note {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px 24px;
+            color: #888;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .verdict {
+            background: #1a3a2a;
+            border-left: 3px solid #00aa55;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>ASRock DeskMini X300</h1>
+    <div class="subhead">Benchmark evolution: 2400GE → 2400G → 5600G | CachyOS / Windows 11 / macOS</div>
+
+    <!-- Configuration Toggle -->
+    <div class="config-bar">
+        <button class="config-btn active" data-config="ge">Ryzen 5 2400GE (Apr 2025)</button>
+        <button class="config-btn" data-config="pro">Ryzen 5 Pro 2400G (Jan 2026)</button>
+        <button class="config-btn" data-config="g">Ryzen 5 5600G (Mar 2026)</button>
+    </div>
+
+    <!-- Dynamic Specs Panel -->
+    <div id="specsPanel" class="specs"></div>
+
+    <!-- Dynamic Power Panel -->
+    <div id="powerPanel" class="power-panel" style="display: none;"></div>
+
+    <!-- Chart Grid -->
+    <div class="chart-grid">
+        <div class="chart-card">
+            <div class="chart-title">Geekbench 6 & CPU Performance</div>
+            <canvas id="cpuChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">Compute Benchmarks</div>
+            <canvas id="computeChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">GPU & Browser Tests</div>
+            <canvas id="gpuChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">Gaming FPS (1080p)</div>
+            <canvas id="gamingChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Dynamic Benchmark List -->
+    <div id="benchmarkList" class="benchmark-list"></div>
+
+    <!-- Verdict / Notes -->
+    <div id="notesPanel" class="note"></div>
+</div>
+
+<script>
+    // Complete dataset for all configurations
+    const configData = {
+        ge: {
+            name: 'Ryzen 5 2400GE',
+            date: 'April 2025',
+            cpu: 'AMD Ryzen 5 2400GE (4C/8T, 3.2 GHz)',
+            ram: '16GB DDR4 3200MHz',
+            storage: '128GB SSD',
+            display: '1080p @ 100Hz',
+            oses: ['CachyOS', 'Windows 11 LTSC'],
+            power: { idle: [14, 13.5], workload: [35, 31], full: [40, 44.8] },
+            benchmarks: {
+                'Silverbench': [18384, 19289],
+                'Wirple': [5062, 4675],
+                '5SBM Multi': [39311, 40049],
+                'Geekbench 6 Single': [1231, 1183],
+                'Geekbench 6 Multi': [3454, 3307],
+                'Geekbench OpenCL': [null, 15317],
+                'Passmark Single': [2017, 2270],
+                'Passmark Multi': [7668, 8291],
+                'MX83GPU': [null, 1040],
+                'EV.IO': [100, 99]
+            },
+            gaming: {
+                'Minecraft No Shaders': [80, 92],
+                'Minecraft BSL Shaders': [22, 30],
+                'Far Cry 3 (720p)': [null, 67],
+                'Far Cry 3 (1080p)': [null, 35]
+            },
+            notes: 'Surprisingly capable low-power APU. Linux performance smoother and lighter. GPU bottleneck in AAA titles.',
+            verdict: 'Web Browsing: 4.5/5 | Gaming: 3/5 | Efficiency: 3.5/5'
+        },
+        pro: {
+            name: 'Ryzen 5 Pro 2400G (Vega 11)',
+            date: 'January 2026',
+            cpu: 'AMD Ryzen 5 Pro 2400G (4C/8T) - Vega 11 iGPU',
+            ram: '16GB DDR4 2933MHz',
+            storage: '256GB NVMe',
+            display: '2560x1080 Ultrawide',
+            oses: ['Windows 11 LTSC'],
+            power: null,
+            benchmarks: {
+                'Silverbench': [25418, null],
+                'Wirple': [5215, null],
+                '5SBM Multi': [45335, null],
+                'Geekbench 6 Single': [1152, null],
+                'Geekbench 6 Multi': [3187, null],
+                'Geekbench OpenCL': [14672, null],
+                'Passmark Single': [null, null],
+                'Passmark Multi': [null, null],
+                'MX83GPU': [1000, null],
+                'EV.IO': [75, null]
+            },
+            gaming: {
+                'Minecraft No Shaders': [null, null],
+                'Minecraft BSL Shaders': [null, null],
+                'Far Cry 3 (UW)': [45, null],
+                'House Flipper': [45, null]
+            },
+            notes: 'Vega 11 iGPU provides solid uplift. Ultrawide resolution impacts gaming FPS.',
+            verdict: 'Good mid-range performer. Vega 11 handles 1080p well.'
+        },
+        g: {
+            name: 'Ryzen 5 5600G (Vega 7)',
+            date: 'March 2026',
+            cpu: 'AMD Ryzen 5 5600G (6C/12T) - Vega 7 iGPU',
+            ram: '16GB DDR4 3200MHz',
+            storage: '512GB NVMe Samsung',
+            display: '1440p @ 100Hz',
+            oses: ['CachyOS', 'Windows 11', 'macOS (Ryzentosh)'],
+            power: null,
+            benchmarks: {
+                'Silverbench': [54596, 58326, 52716],
+                'Wirple': [9535, 7192, 9497],
+                '5SBM Multi': [104183, 103936, 62249],
+                'Geekbench 6 Single': [2110, 2026, 1949],
+                'Geekbench 6 Multi': [8425, 8054, 7865],
+                'Geekbench OpenCL': [null, 15210, 17063],
+                'Passmark Single': [3273, 3263, null],
+                'Passmark Multi': [19990, 20034, null],
+                'MX83GPU': [null, 880, 3280],
+                'EV.IO': [100, 100, 56]
+            },
+            gaming: {
+                'Minecraft No Shaders': [400, 300, 165],
+                'Minecraft BSL Shaders': [44, 48, 31],
+                'Far Cry 3 (1080p)': [77, 66, null],
+                'House Flipper': [35, 44, null]
+            },
+            notes: '5600G is a massive leap. 6 cores show in multi-thread. macOS GPU acceleration limited in Brave.',
+            verdict: 'Excellent budget APU. 1440p gaming possible with reduced settings.'
+        }
+    };
+
+    let currentConfig = 'ge';
+    let charts = {};
+
+    function updateUI(configId) {
+        const data = configData[configId];
+        
+        // Update specs
+        const specsHtml = `
+            <div class="spec-item"><div class="spec-label">CPU</div><div class="spec-value">${data.cpu}</div></div>
+            <div class="spec-item"><div class="spec-label">RAM</div><div class="spec-value">${data.ram}</div></div>
+            <div class="spec-item"><div class="spec-label">Storage</div><div class="spec-value">${data.storage}</div></div>
+            <div class="spec-item"><div class="spec-label">Display</div><div class="spec-value">${data.display}</div></div>
+            <div class="spec-item"><div class="spec-label">Test Date</div><div class="spec-value">${data.date}</div></div>
+        `;
+        document.getElementById('specsPanel').innerHTML = specsHtml;
+
+        // Power panel (only for 2400GE)
+        const powerPanel = document.getElementById('powerPanel');
+        if (data.power) {
+            powerPanel.style.display = 'block';
+            powerPanel.innerHTML = `
+                <h3>Power Consumption (Wall Meter)</h3>
+                <div class="power-grid">
+                    <div class="power-item"><div class="power-label">Idle</div><div class="power-value">${data.power.idle[0]}W (Linux) / ${data.power.idle[1]}W (Win)</div></div>
+                    <div class="power-item"><div class="power-label">Workload</div><div class="power-value">${data.power.workload[0]}W (Linux) / ${data.power.workload[1]}W (Win)</div></div>
+                    <div class="power-item"><div class="power-label">Full Load</div><div class="power-value">${data.power.full[0]}W (Linux) / ${data.power.full[1]}W (Win)</div></div>
+                </div>
+            `;
+        } else {
+            powerPanel.style.display = 'none';
+        }
+
+        // Update charts
+        updateCharts(configId);
+
+        // Update benchmark list
+        updateBenchmarkList(configId);
+
+        // Update notes
+        document.getElementById('notesPanel').innerHTML = `
+            <strong>Key Findings:</strong> ${data.notes}<br><br>
+            <strong>Verdict:</strong> ${data.verdict}
+        `;
+    }
+
+    function updateCharts(configId) {
+        const data = configData[configId];
+        const osLabels = data.oses;
+        const colors = ['#3a86ff', '#9b59b6', '#e67e22'];
+        
+        // Destroy old charts if they exist
+        Object.values(charts).forEach(chart => { if (chart) chart.destroy(); });
+
+        // CPU Chart - Geekbench Single & Multi
+        const cpuCtx = document.getElementById('cpuChart').getContext('2d');
+        charts.cpu = new Chart(cpuCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Geekbench Single', 'Geekbench Multi', 'Passmark Single', 'Passmark Multi'],
+                datasets: osLabels.map((os, idx) => ({
+                    label: os,
+                    data: [
+                        data.benchmarks['Geekbench 6 Single']?.[idx] || 0,
+                        data.benchmarks['Geekbench 6 Multi']?.[idx] || 0,
+                        data.benchmarks['Passmark Single']?.[idx] || 0,
+                        data.benchmarks['Passmark Multi']?.[idx] || 0
+                    ],
+                    backgroundColor: colors[idx],
+                    borderRadius: 6
+                }))
+            },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+        });
+
+        // Compute Chart
+        const computeCtx = document.getElementById('computeChart').getContext('2d');
+        charts.compute = new Chart(computeCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Silverbench', 'Wirple', '5SBM Multi', 'MX83GPU'],
+                datasets: osLabels.map((os, idx) => ({
+                    label: os,
+                    data: [
+                        data.benchmarks['Silverbench']?.[idx] || 0,
+                        data.benchmarks['Wirple']?.[idx] || 0,
+                        data.benchmarks['5SBM Multi']?.[idx] || 0,
+                        data.benchmarks['MX83GPU']?.[idx] || 0
+                    ],
+                    backgroundColor: colors[idx],
+                    borderRadius: 6
+                }))
+            },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+        });
+
+        // GPU Chart
+        const gpuCtx = document.getElementById('gpuChart').getContext('2d');
+        charts.gpu = new Chart(gpuCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Geekbench OpenCL', 'EV.IO', 'Wirple'],
+                datasets: osLabels.map((os, idx) => ({
+                    label: os,
+                    data: [
+                        data.benchmarks['Geekbench OpenCL']?.[idx] || 0,
+                        data.benchmarks['EV.IO']?.[idx] || 0,
+                        data.benchmarks['Wirple']?.[idx] || 0
+                    ],
+                    backgroundColor: colors[idx],
+                    borderRadius: 6
+                }))
+            },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+        });
+
+        // Gaming Chart
+        const gamingCtx = document.getElementById('gamingChart').getContext('2d');
+        const gameLabels = Object.keys(data.gaming);
+        charts.gaming = new Chart(gamingCtx, {
+            type: 'bar',
+            data: {
+                labels: gameLabels,
+                datasets: osLabels.map((os, idx) => ({
+                    label: os,
+                    data: gameLabels.map(game => data.gaming[game]?.[idx] || 0),
+                    backgroundColor: colors[idx],
+                    borderRadius: 6
+                }))
+            },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'top' } } }
+        });
+    }
+
+    function updateBenchmarkList(configId) {
+        const data = configData[configId];
+        const osLabels = data.oses;
+        
+        let osColumnsHtml = '';
+        for (let i = 0; i < osLabels.length; i++) {
+            let benchRows = '';
+            for (const [bench, scores] of Object.entries(data.benchmarks)) {
+                if (scores[i] !== null && scores[i] !== 0) {
+                    benchRows += `<div class="bench-row"><span class="bench-name">${bench}</span><span class="bench-score">${scores[i].toLocaleString()}</span></div>`;
+                }
+            }
+            osColumnsHtml += `
+                <div class="os-section">
+                    <h4>${osLabels[i]}</h4>
+                    ${benchRows}
+                </div>
+            `;
+        }
+        
+        let gamingHtml = '';
+        if (Object.keys(data.gaming).length > 0) {
+            let gameRows = '';
+            for (const [game, scores] of Object.entries(data.gaming)) {
+                let scoreStr = scores.map((s, idx) => s ? `${osLabels[idx]}: ${s} fps` : '').filter(s => s).join(' | ');
+                if (scoreStr) {
+                    gameRows += `<div class="bench-row"><span class="bench-name">${game}</span><span class="bench-score">${scoreStr}</span></div>`;
+                }
+            }
+            gamingHtml = `
+                <div class="gaming-section">
+                    <h4>Gaming Benchmarks</h4>
+                    ${gameRows}
+                </div>
+            `;
+        }
+        
+        document.getElementById('benchmarkList').innerHTML = `
+            <h3>Complete Benchmark Results</h3>
+            <div class="os-columns">${osColumnsHtml}</div>
+            ${gamingHtml}
+        `;
+    }
+
+    // Event listeners for buttons
+    document.querySelectorAll('.config-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.config-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentConfig = btn.getAttribute('data-config');
+            updateUI(currentConfig);
+        });
+    });
+
+    // Initial load
+    updateUI('ge');
+</script>
+</body>
+</html>
